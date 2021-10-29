@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toolbarText"><![CDATA[MALAABE<b>APP</b>]]></string>
+    <string name="emptyListMessage">No items</string>
+
+    <string name="dialogYes">Yes</string>
+    <string name="dialogNo">No</string>
+
+    <string name="dialogLogoutTitle">Log out</string>
+    <string name="dialogLogoutMessage">Are you sure you want to log out?</string>
+
+    <string name="textOK">OK</string>
+</resources>

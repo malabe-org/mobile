@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
+apply from: '../versions.gradle'
+
+android {
+    compileSdkVersion versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "env"
+    productFlavors {
+        dev {
+            dimension "env"
+        }
+        prod {
+            dimension "env"
+        }
+    }
+}
+
+dependencies {
+
+    api "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    api "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
+    api "com.squareup.okhttp3:logging-interceptor:$versions.okHttpLogInterceptor"
+
+    /* TODO: debug dependency */
+    api "com.facebook.stetho:stetho:$versions.stetho"
+    api "com.facebook.stetho:stetho-okhttp3:$versions.stetho"
+
+    implementation "com.jakewharton.threetenabp:threetenabp:$versions.threeTenAbp"
+    implementation "com.google.dagger:dagger:2.35.1"
+    kapt "com.google.dagger:dagger-compiler:$versions.dagger"
+
+    testImplementation "junit:junit:$versions.junit"
+}

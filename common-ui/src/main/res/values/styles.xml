@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Default Alert Dialog -->
+    <style name="AlertDialog" parent="@style/Theme.MaterialComponents.Light.Dialog">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AlertDialog.NegativeButton</item>
+        <item name="backgroundInsetTop">@dimen/spacingBig</item>
+        <item name="backgroundInsetBottom">@dimen/spacingBig</item>
+        <item name="backgroundInsetStart">@dimen/spacingNormal</item>
+        <item name="backgroundInsetEnd">@dimen/spacingNormal</item>
+    </style>
+
+    <style name="AlertDialog.NegativeButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+</resources>

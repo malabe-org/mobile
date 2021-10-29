@@ -1,0 +1,466 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:colorBackgroundFloating">@color/colorBackground</item>
+        <item name="colorBackgroundFloating">@color/colorBackground</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+    </style>
+
+    <style name="CheckBox" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:colorControlNormal">@color/colorTextPrimary</item>
+        <item name="android:colorControlActivated">@color/colorButtonOrangeBg</item>
+        <item name="android:colorControlHighlight">@color/colorButtonOrangeBg</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+    </style>
+
+    <!-- TODO: apply base style, like font etc -->
+    <style name="TextView" />
+
+    <style name="TextViewBold" parent="TextView">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.Small" parent="TextView">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ProgressBar">
+        <item name="android:indeterminateTintMode">src_in</item>
+    </style>
+
+    <style name="ProgressBar.Gray" parent="ProgressBar">
+        <item name="android:indeterminateTint">@color/colorProgressGray</item>
+    </style>
+
+    <style name="ProgressBar.Accent" parent="ProgressBar">
+        <item name="android:indeterminateTint">@color/colorButtonOrangeBg</item>
+    </style>
+
+    <style name="AccentButton" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorButtonNormal">@color/colorGray</item>
+        <item name="android:background">@drawable/bg_button_gradient</item>
+
+        <!-- customize colorButtonNormal for the disable color -->
+        <!-- customize colorAccent for the enabled color -->
+    </style>
+
+    <style name="Button">
+        <item name="android:minHeight">@dimen/defaultButtonHeight</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TutorialButton" parent="Button">
+        <item name="android:minHeight">@dimen/tutorialButtonHeight</item>
+    </style>
+
+    <style name="Button.Orange" parent="TutorialButton">
+        <item name="android:backgroundTint">@color/colorButtonOrangeBg</item>
+    </style>
+
+    <style name="Button.Black" parent="TutorialButton">
+        <item name="android:backgroundTint">@color/colorButtonBlackBg</item>
+    </style>
+
+    <style name="Button.Facebook" parent="Button">
+        <item name="android:backgroundTint">@color/colorFacebookSignIn</item>
+        <item name="android:text">@string/signInWithFacebook</item>
+        <item name="android:minHeight">@dimen/socialButtonHeight</item>
+    </style>
+
+    <style name="Button.Google" parent="Button">
+        <item name="android:backgroundTint">@color/colorGoogleSignIn</item>
+        <item name="android:text">@string/signInWithGoogle</item>
+        <item name="android:minHeight">@dimen/socialButtonHeight</item>
+    </style>
+
+    <style name="Button.SignIn" parent="Button">
+        <item name="android:background">@drawable/stateful_gradient_button</item>
+    </style>
+
+    <style name="Button.Red" parent="Button">
+        <item name="android:backgroundTint">@color/colorButtonOrangeBg</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="Button.Gradient" parent="Button">
+        <item name="android:background">@drawable/stateful_gradient_button</item>
+    </style>
+
+    <style name="Separator">
+        <item name="android:background">@color/colorSeparator</item>
+    </style>
+
+    <style name="Separator.Horizontal">
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="Tutorial" />
+
+    <style name="Tutorial.Title" parent="TextViewBold">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="Tutorial.LogoTitle" parent="Tutorial.Title">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Tutorial.Description" parent="Tutorial.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="SignIn" />
+
+    <style name="SignIn.Input">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="SignIn.Footer">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="SignIn.TextLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:colorBackground">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:textSize">20sp</item>
+        <item name="boxBackgroundColor">@color/colorWhite</item>
+        <item name="colorControlNormal">@color/colorTextHint</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="passwordToggleTint">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+    </style>
+
+    <style name="BrowseTabsStyle" parent="Widget.Design.TabLayout">
+        <item name="tabMode">scrollable</item>
+        <item name="tabIndicator">@null</item>
+        <item name="tabSelectedTextColor">@color/colorWhite</item>
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabRippleColor">@android:color/transparent</item>
+        <item name="tabIndicatorAnimationDuration">200</item>
+        <item name="tabTextAppearance">@style/BrowseTabTextStyle</item>
+    </style>
+
+    <style name="BrowseTabTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorTextOrange</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="Profile" />
+
+    <style name="Profile.Header" />
+
+    <style name="Profile.Header.UserName" parent="TextViewBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="Profile.Header.City" parent="TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="Profile.Categories" />
+
+    <style name="Profile.Categories.Item" parent="TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <!-- Default Bottom Sheet Dialog -->
+
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
+
+    <style name="Profile.Sold" />
+
+    <style name="Profile.ItemDescription" parent="TextView">
+        <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Profile.ItemPrice" parent="Profile.ItemDescription">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Profile.ItemStatus" parent="Profile.ItemPrice">
+        <item name="android:textColor">@color/colorBlue</item>
+    </style>
+
+    <style name="Profile.ItemDescription.Multiline" parent="Profile.ItemDescription">
+        <item name="android:maxLines">3</item>
+    </style>
+
+    <style name="Profile.ActiveProducts">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">@dimen/spacingTiny</item>
+        <item name="android:paddingBottom">@dimen/spacingTiny</item>
+        <item name="android:paddingLeft">@dimen/spacingSmall</item>
+    </style>
+
+    <style name="Checkout" />
+
+    <style name="Checkout.CategoryTitle">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Checkout.CategoryContainer">
+        <item name="android:clipChildren">false</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:elevation">@dimen/defaultListItemElevation</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/spacingMedium</item>
+    </style>
+
+    <style name="Address" />
+
+    <style name="Address.Title">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Address.ItemUserName">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Address.ItemAddressPart">
+        <item name="android:layout_marginTop">@dimen/spacingMicro</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="Address.ItemAddressPart.CheckoutPage" parent="Address.ItemAddressPart">
+        <item name="android:layout_marginTop">0dp</item>
+    </style>
+
+    <style name="RadioButton">
+        <item name="android:buttonTint">@color/colorAccent</item>
+        <item name="android:layout_marginTop">@dimen/spacingSmall</item>
+        <item name="android:layout_marginBottom">@dimen/spacingSmall</item>
+    </style>
+
+    <style name="MyAccount" />
+
+    <style name="MyAccount.UserName">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyAccount.Email">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="MyAccount.TextRed">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/colorRedBrand</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyAccount.Category">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PersonalInfo" />
+
+    <style name="PersonalInfo.Image">
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_width">22dp</item>
+        <item name="android:layout_height">22dp</item>
+    </style>
+
+    <style name="PersonalInfo.TextInputLayout" parent="SignIn.TextLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/personalInfoInputMargin</item>
+        <item name="android:layout_marginTop">@dimen/spacingMedium</item>
+        <item name="android:layout_marginEnd">@dimen/spacingBig</item>
+    </style>
+
+    <style name="PersonalInfo.IconNext" parent="SignIn.TextLayout">
+        <item name="android:layout_width">12dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginEnd">@dimen/spacingNormal</item>
+        <item name="android:src">@drawable/ic_personal_info_next</item>
+    </style>
+
+    <style name="ReviewCategory">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ReviewStar">
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_star_filled</item>
+    </style>
+
+    <style name="BankAccountBalance" parent="Address.ItemAddressPart">
+        <item name="android:paddingLeft">@dimen/spacingMedium</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TransferBalanceLabel" parent="Address.ItemAddressPart">
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginTop">@dimen/spacingMedium</item>
+    </style>
+
+    <style name="TransferBalanceValue" parent="Address.ItemAddressPart">
+        <item name="android:paddingRight">@dimen/spacingMedium</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Sell" />
+
+    <style name="Sell.Title">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Sell.IndicatorDot">
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:background">@drawable/bg_circle_gray</item>
+    </style>
+
+    <style name="Sell.IndicatorLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="Sell.TextLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:colorBackground">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:textSize">20sp</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="colorControlNormal">@color/colorTextHint</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="passwordToggleTint">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+    </style>
+
+    <style name="Sell.TextInputLayout" parent="Sell.TextLayout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/spacingMedium</item>
+        <item name="android:layout_marginEnd">@dimen/spacingMedium</item>
+    </style>
+
+    <style name="Sell.TextInput">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="Sell.PageTitle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="Sell.PageSubTitle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorTextSecondary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Sell.IconNext" parent="Sell.TextLayout">
+        <item name="android:layout_width">12dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginEnd">@dimen/spacingNormal</item>
+        <item name="android:src">@drawable/ic_personal_info_next</item>
+    </style>
+
+    <style name="Sell.AttributesLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/spacingMicro</item>
+        <item name="android:textColor">@color/colorTextSecondary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="Sell.AttributesValue">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>

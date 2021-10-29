@@ -1,0 +1,5 @@
+rootProject.name = "MalaabeApp"
+include ':app'
+include ':network'
+include ':common-ui'
+include ':persistance'

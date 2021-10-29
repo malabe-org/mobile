@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.appcompat.widget.Toolbar">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/lightToolbarBack"
+            android:src="@drawable/ic_arrow_back_black"
+            app:layout_constraintTop_toTopOf="@+id/lightToolbarTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/lightToolbarTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="4dp"
+            android:layout_marginStart="@dimen/toolbarBackMarginStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lightToolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/toolbarTitleSpaceTop"
+            android:layout_marginBottom="@dimen/toolbarTitleSpaceBottom"
+            tools:text="Toolbar title"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

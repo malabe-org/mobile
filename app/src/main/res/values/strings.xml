@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name">Malaabe App</string>
+    <string name="textSearch">Search</string>
+    <string name="textYourMessage">Your message</string>
+    <string name="textClear">Clear</string>
+    <string name="textAll">All</string>
+    <string name="textApply">Apply</string>
+    <string name="textSelect">Select</string>
+    <string name="textCancel">Cancel</string>
+    <string name="textConfirm">Confirm</string>
+    <string name="textConfirmPayment">Confirm Payment</string>
+    <string name="textSave">Save</string>
+    <string name="textDelete">Delete</string>
+    <string name="textExit">Exit</string>
+
+    <!-- Time -->
+    <string name="textTimeOneYearAgo">Over 1 year ago</string>
+
+    <plurals name="textTimeMonthsAgo">
+        <item quantity="one">About 1 month ago</item>
+        <item quantity="other">About %d months ago</item>
+    </plurals>
+
+    <plurals name="textTimeWeeksAgo">
+        <item quantity="one">About 1 week ago</item>
+        <item quantity="other">About %d weeks ago</item>
+    </plurals>
+
+    <plurals name="textTimeDaysAgo">
+        <item quantity="one">About 1 day ago</item>
+        <item quantity="other">About %d days ago</item>
+    </plurals>
+
+    <plurals name="textTimeHoursAgo">
+        <item quantity="one">About 1 hour ago</item>
+        <item quantity="other">About %d hours ago</item>
+    </plurals>
+
+    <plurals name="textTimeMinutesAgo">
+        <item quantity="one">About 1 minute ago</item>
+        <item quantity="other">About %d minutes ago</item>
+    </plurals>
+
+    <plurals name="textTimeSecondsAgo">
+        <item quantity="one">About 1 second ago</item>
+        <item quantity="other">About %d seconds ago</item>
+    </plurals>
+
+    <!-- Tutorial -->
+    <string name="presentationTextPage1Title">Fight Corruption</string>
+    <string name="presentationTextPage1Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt!</string>
+    <string name="presentationTextPage2Title">Fight Corruption</string>
+    <string name="presentationTextPage2Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt!</string>
+    <string name="presentationTextPage3Title">Raise Hand</string>
+    <string name="presentationTextPage3Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt!</string>
+    <string name="presentationTextPage4Title">Sign up NOW</string>
+    <string name="presentationTextPage4Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt!</string>
+
+    <string name="tutorialFooterText">MALAABE</string>
+    <string name="tutorialLogoText"><![CDATA[MALAABE<b>APP</b>]]></string>
+    <string name="tutorialSignUpButton">SIGN UP</string>
+    <string name="tutorialSignInButton">SIGN IN</string>
+
+
+    <!-- Sign Up/In -->
+    <string name="signInTitle">Sign in</string>
+    <string name="signInSeparator">or email</string>
+    <string name="signInForgotPassword">Forgot password?</string>
+    <string name="signInWithGoogle">CONTINUE WITH GOOGLE</string>
+    <string name="signInWithFacebook">CONTINUE WITH FACEBOOK</string>
+    <string name="signInEmailHint">Email</string>
+    <string name="signInPasswordHint">Password</string>
+    <string name="signInButton">SIGN IN</string>
+    <string name="signInFooterText"><![CDATA[New to MALAABE APP? <b>Create free account!</b>]]></string>
+
+    <string name="signUpTitle">Sign up</string>
+    <string name="signUpButton">SIGN UP</string>
+    <string name="signUpAgreeTerms">I agree with terms and uses</string>
+    <string name="signUpFooterText"><![CDATA[Already using MALAABE APP? <b>Sign In instead!</b>]]></string>
+    <string name="signUpUserNameHint">Username</string>
+
+    <string name="signUpErrorInvalidPassword">Password must contain at least 6 characters, at least 1 upper case and 1 digit.</string>
+    <string name="signUpErrorInvalidEmail">Invalid email format.</string>
+    <string name="signUpErrorInvalidUserName">Username cannot be empty.</string>
+
+    <string name="resetPasswordTitle">Reset Password</string>
+    <string name="resetPasswordFooter">An email containing a temporary password will be sent. This password can only be used once. You will be required to reset your password the next time you login.</string>
+    <string name="resetPasswordButton">RESET PASSWORD</string>
+    <string name="resetPasswordSuccess">Password reset instructions have been sent to the email address provided</string>
+    <string name="resetPasswordOld">Temporary Password</string>
+    <string name="resetPasswordNew">New Password</string>
+    <string name="resetPasswordNewConfirm">Confirm New Password</string>
+    <string name="resetPasswordConfirm">Reset Password</string>
+
+    <string name="socialRegisterTitle">Sign up</string>
+    <string name="socialRegisterUserNameHint">Username</string>
+    <string name="socialRegisterSendButton">REGISTER</string>
+    <string name="socialRegisterFooter">Enter your username and create an account. The username can\'t be changed later.</string>
+
+
+    <string name="myDocumentStatusPending">Pending</string>
+    <string name="myDocumentStatusDelivered">Delivered</string>
+    <string name="myDocumentStatusProcessing">Processing</string>
+    <string name="myDocumentEdit">Edit</string>
+
+
+    <string name="accountSettingsTitle">Account Settings</string>
+    <string name="accountSettingsChangePassword">CHANGE PASSWORD</string>
+    <string name="accountSettingsAddNewAddress">ADD NEW ADDRESS</string>
+    <string name="accountSettingsMyAddresses">MY ADDRESSES</string>
+    <string name="accountSettingsPaymentsAccount">PAYMENTS ACCOUNT</string>
+    <string name="accountSettingsBankAccountItemTransferBalance">TRANSFER BALANCE</string>
+
+    <string name="accountSettingsAddAccountTitle">ADD ACCOUNT</string>
+    <string name="accountSettingsAddAccountBankHint">Type bank account</string>
+    <string name="accountSettingsAddAccountRoutingNumberHint">Type routing number</string>
+    <string name="accountSettingsAddAccountBankNameHint">Type bank name</string>
+
+    <string name="accountSettingsTransferBalanceTitle">TRANSFER BALANCE</string>
+    <string name="accountSettingsTransferBalanceSelectedAccountLabel">Selected account:</string>
+    <string name="accountSettingsTransferBalanceAvailableBalanceLabel">Available balance:</string>
+    <string name="accountSettingsTransferBalanceBalanceAfterTransferLabel">Balance left after transfer:</string>
+    <string name="accountSettingsTransferBalanceAmountHint">Type amount to be transferred</string>
+
+    <string name="changePasswordTitle">Change password</string>
+    <string name="changePasswordFooter">To lock or delete your user accont please contact our customer care team.</string>
+    <string name="changePasswordConfirm">CHANGE PASSWORD</string>
+    <string name="changePasswordOld">Old password</string>
+    <string name="changePasswordNew">New password</string>
+    <string name="changePasswordNewConfirm">Confirm new password</string>
+    <string name="changePasswordErrorBothNotTheSame">Password confirmation does not match</string>
+    <string name="changePasswordErrorOldEmpty">Old password cannot be empty</string>
+    <string name="changePasswordUpdateSuccess">Your password has been changed!</string>
+
+    <string name="personalInfoTitle">Personal info</string>
+    <string name="personalInfoAddNewPhoto">Add new photo</string>
+    <string name="personalInfoFirstNameHint">First name</string>
+    <string name="personalInfoLastNameHint">Last name</string>
+    <string name="personalInfoEmailAddressHint">Email address*</string>
+    <string name="personalInfoPhoneNumberHint">Phone number</string>
+    <string name="personalInfoGenderHint">Gender</string>
+    <string name="personalInfoUpdateSuccess">Your profile has been updated!</string>
+
+    <string name="genderPickerTitle">GENDER</string>
+    <string name="genderPickerMale">Male</string>
+    <string name="genderPickerFemale">Female</string>
+    <string name="genderPickerOther">Other</string>
+
+    <string name="changeEmailTitle">Change email</string>
+    <string name="changeEmailNewMail">New email address</string>
+    <string name="changeEmailNewMailConfirm">Confirm new email address</string>
+    <string name="changeEmailPasswordConfirm">Confirm password</string>
+    <string name="changeEmailConfirmButton">CHANGE EMAIL</string>
+    <string name="changeEmailErrorBothNotTheSame">Email confirmation does not match</string>
+    <string name="changeEmailUpdateSuccess">Your email has been changed!</string>
+
+    <string name="changeAddressTitle">Change email</string>
+    <string name="changeAddressSuccess">Address has been changed!</string>
+
+    <string name="errorGeneral">Something went wrong.\nPlease check your internet connection or contact us if this happens again.</string>
+
+    <!-- Transactions -->
+    <string name="transactionsFragmentTitle">Transactions history</string>
+    <string name="transactionsListEmpty">You do not have any transactions.</string>
+    <string name="transactionPendingSuffix">\u0020- PENDING</string>
+    <string name="transactionId">Transaction #%d</string>
+
+    <string name="authenticatedOnlyDialogTitle">Content Unavailable</string>
+    <string name="authenticatedOnlyDialogMessage">This functionality is available only for logged in users</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

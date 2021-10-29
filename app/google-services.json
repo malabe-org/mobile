@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "243839772357",
+    "project_id": "malaabe-75ab4",
+    "storage_bucket": "malaabe-75ab4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243839772357:android:e1097d10338c1c624472ac",
+        "android_client_info": {
+          "package_name": "com.malaabeteam.malaabeapp.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243839772357-7l0kdj26r2rftlmni2blnbt6p75mhs3m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.malaabeteam.malaabeapp",
+            "certificate_hash": "aaffc132d28592d333703d4edb6ae73bad5db044"
+          }
+        },
+        {
+          "client_id": "243839772357-uk47gr0rlkvkd2ubcp8l709mgp9vemv7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKkiQQE4wC9dZUtP8r10VhxP3CIiGfL8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243839772357-uk47gr0rlkvkd2ubcp8l709mgp9vemv7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

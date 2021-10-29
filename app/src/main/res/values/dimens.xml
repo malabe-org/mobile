@@ -1,0 +1,89 @@
+<resources>
+  <dimen name="defaultButtonCornerRadius">4dp</dimen>
+  <dimen name="defaultButtonHeight">46dp</dimen>
+  <dimen name="tutorialButtonHeight">70dp</dimen>
+  <dimen name="socialButtonHeight">58dp</dimen>
+  <dimen name="defaultListItemElevation">4dp</dimen>
+  <dimen name="defaultListItemCorner">6dp</dimen>
+  <dimen name="defaultSearchViewHeight">48dp</dimen>
+
+  <dimen name="snackBarHostTranslationZ">10dp</dimen>
+  <dimen name="bottomNavigationHeight">56dp</dimen>
+  <dimen name="bottomNavigationHeightPadded">72dp</dimen>
+  <dimen name="bottomNavigationSellOptionWidth">96dp</dimen>
+  <dimen name="bottomNavigationBasketBadgeTopOffset">2dp</dimen>
+
+  <dimen name="swipeRefreshStartOffset">16dp</dimen>
+  <dimen name="swipeRefreshEndOffset">126dp</dimen>
+
+  <dimen name="browseFilterFieldCorner">6dp</dimen>
+  <dimen name="browseFilterFieldElevation">2dp</dimen>
+  <dimen name="browseFilterChipElevation">4dp</dimen>
+  <dimen name="browseFilterChipCorner">6dp</dimen>
+  <dimen name="browseFilterViewCorner">6dp</dimen>
+  <dimen name="browseFilterViewHeight">32dp</dimen>
+  <dimen name="browseSearchViewCorner">6dp</dimen>
+  <dimen name="browseSearchTopMargin">18dp</dimen>
+  <dimen name="browseGridTabsTopMargin">76dp</dimen>
+  <dimen name="browseGridTabsHeight">48dp</dimen>
+  <dimen name="browseGridHorizontalMargin">8dp</dimen>
+  <dimen name="browseGridTopMargin">122dp</dimen>
+  <dimen name="browseGridBottomMargin">62dp</dimen>
+  <dimen name="browseGridItemHorizontalMargin">8dp</dimen>
+  <dimen name="browseGridItemVerticalMargin">12dp</dimen>
+  <dimen name="browseGridItemElevation">8dp</dimen>
+  <dimen name="browseGridItemCorner">6dp</dimen>
+
+  <dimen name="chatListItemImageSize">64dp</dimen>
+  <dimen name="chatMessageImageSize">32dp</dimen>
+  <dimen name="chatRecyclerPaddingTop">40dp</dimen>
+  <dimen name="chatSearchViewMarginTop">90dp</dimen>
+  <dimen name="chatMessageInputHeight">48dp</dimen>
+  <dimen name="chatMessageInputHeightPadded">66dp</dimen>
+
+  <dimen name="productGalleryImageCorner">8dp</dimen>
+  <dimen name="productAddToBasketHeight">78dp</dimen>
+
+  <dimen name="footerBottomMargin">@dimen/spacingHuge</dimen>
+
+  <dimen name="profileHorizontalMargin">24dp</dimen>
+  <dimen name="profileComponentsVerticalSpace">24dp</dimen>
+  <dimen name="profileHeaderOverlapBaseLineMargin">25dp</dimen>
+  <dimen name="profileHeaderImageSize">100dp</dimen>
+  <dimen name="profileHeaderImageCornerRadius">50dp</dimen>
+  <dimen name="profileHeaderStarSize">14dp</dimen>
+  <dimen name="profileCategoryListHorizontalMargin">14dp</dimen>
+  <dimen name="profileCategoryElevation">4dp</dimen>
+  <dimen name="profileCategoryLoader">36dp</dimen>
+  <dimen name="profileItemImageSize">88dp</dimen>
+  <dimen name="profileItemNameVerticalSpacing">22dp</dimen>
+  <dimen name="profileTeamImageHeight">96dp</dimen>
+  <dimen name="profileAddTeamStrokeWidth">2dp</dimen>
+
+  <dimen name="tutorialDotSize">8dp</dimen>
+  <dimen name="tutorialDotCornerRadius">4dp</dimen>
+
+  <dimen name="basketQuantityStrokeWidth">1.5dp</dimen>
+  <dimen name="basketQuantityCorner">3dp</dimen>
+  <dimen name="basketSubtotalElevation">4dp</dimen>
+  <dimen name="basketCheckoutHeight">140dp</dimen>
+  <dimen name="basketListBottomPadding">196dp</dimen>
+
+  <dimen name="checkoutAddressItemWidth">270dp</dimen>
+
+  <dimen name="accountSettingsUserImageSize">120dp</dimen>
+  <dimen name="accountSettingsBackgroundHeight">180dp</dimen>
+  <dimen name="accountSettingsHeaderMarginTop">80dp</dimen>
+  <dimen name="accountSettingsHeaderUserNamePaddingTop">84dp</dimen>
+  <dimen name="accountSettingsHeaderElevation">10dp</dimen>
+
+  <dimen name="reviewUserImageSize">64dp</dimen>
+  <dimen name="personalInfoInputMargin">46dp</dimen>
+  <dimen name="personalInfoImageSize">102dp</dimen>
+  <dimen name="addressRecyclerMinHeight">60dp</dimen>
+
+  <!-- Sell -->
+  <dimen name="sellScrollPaddingBottom">80dp</dimen>
+  <dimen name="sellScrollMainImageHeight">200dp</dimen>
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="spacingHuge">32dp</dimen>
+  <dimen name="spacingBig">24dp</dimen>
+  <dimen name="spacingMedium">16dp</dimen>
+  <dimen name="spacingNormal">12dp</dimen>
+  <dimen name="spacingSmall">8dp</dimen>
+  <dimen name="spacingTiny">4dp</dimen>
+  <dimen name="spacingMicro">2dp</dimen>
+
+  <dimen name="toolbarHeight">74dp</dimen>
+  <dimen name="toolbarBackMarginStart">12dp</dimen>
+  <dimen name="toolbarTitleSpaceTop">44dp</dimen>
+  <dimen name="toolbarTitleSpaceBottom">26dp</dimen>
+
+  <dimen name="toolbarOverlappingBottomSpace">26dp</dimen>
+  <dimen name="toolbarCardOverlapTranslation">-26dp</dimen>
+  <dimen name="toolbarCardOverlapCornerRadius">26dp</dimen>
+</resources>
