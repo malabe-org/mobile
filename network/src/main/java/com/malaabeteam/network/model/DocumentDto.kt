@@ -9,5 +9,6 @@ data class DocumentDto(
   val imageUrl: String,
   val created: LocalDateTime,
   val captures: List<ImageDto>,
-  val description: String
+  val description: String,
+  val state: Boolean
 )

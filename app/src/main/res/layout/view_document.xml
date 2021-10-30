@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="android.widget.FrameLayout"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewDocumentRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/browseGridItemHorizontalMargin"
+        android:layout_marginTop="@dimen/browseGridItemVerticalMargin"
+        android:layout_marginEnd="@dimen/browseGridItemHorizontalMargin"
+        android:layout_marginBottom="@dimen/browseGridItemVerticalMargin"
+        android:background="@drawable/stateful_gradient_button"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="@dimen/browseGridItemElevation"
+        android:foreground="?attr/selectableItemBackground"
+        >
+
+        <ImageView
+            android:id="@+id/viewDocumentImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingSmall"
+            android:background="@drawable/bg_document_list"
+            app:layout_constraintBottom_toTopOf="@id/viewDocumentDate"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            />
+
+        <TextView
+            android:id="@+id/viewDocumentDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingSmall"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingSmall"
+            android:layout_marginBottom="@dimen/spacingBig"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/viewDocumentTitle"
+            app:layout_constraintEnd_toStartOf="@id/viewDocumentTeamIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            tools:ignore="SmallSp"
+            tools:text="Created some time ago"
+            />
+
+        <ImageView
+            android:id="@+id/viewDocumentTeamIcon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingSmall"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/viewDocumentDate"
+            app:layout_constraintTop_toBottomOf="@id/viewDocumentImage"
+            app:srcCompat="@drawable/ic_innovations"
+            tools:visibility="visible"
+            />
+
+        <TextView
+            android:id="@+id/viewDocumentTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingSmall"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/viewDocumentDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewDocumentDate"
+            tools:text="Passport creation request"
+            />
+
+        <TextView
+            android:id="@+id/viewDocumentDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingSmall"
+            android:layout_marginBottom="@dimen/spacingBig"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-light"
+            android:lines="2"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@id/viewDocumentListPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewDocumentTitle"
+            tools:text="I want a passport"
+            />
+
+        <TextView
+            android:id="@+id/viewDocumentListPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingSmall"
+            android:layout_marginBottom="@dimen/spacingSmall"
+            android:gravity="end"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_pending_state"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewDocumentDescription"
+            tools:text="pending"
+            />
+
+        <TextView
+            android:id="@+id/viewDocumentStateText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:layout_marginBottom="@dimen/spacingSmall"
+            android:gravity="start"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/viewDocumentListPrice"
+            app:layout_constraintEnd_toEndOf="@id/viewDocumentListPrice"
+            app:layout_constraintStart_toStartOf="@id/viewDocumentListPrice"
+            app:layout_constraintTop_toTopOf="@id/viewDocumentListPrice"
+            tools:text="State"
+            />
+
+        <ProgressBar
+            android:id="@+id/viewDocumentProgress"
+            style="@style/ProgressBar.Accent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="@dimen/spacingMicro"
+            app:layout_constraintBottom_toTopOf="@id/viewDocumentTitle"
+            app:layout_constraintEnd_toEndOf="@id/viewDocumentImage"
+            app:layout_constraintStart_toStartOf="@id/viewDocumentImage"
+            app:layout_constraintTop_toBottomOf="@id/viewDocumentDate"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</merge>
