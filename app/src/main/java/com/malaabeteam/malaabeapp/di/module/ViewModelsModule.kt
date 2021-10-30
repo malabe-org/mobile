@@ -5,6 +5,7 @@ import com.malaabeteam.malaabeapp.di.ViewModelKey
 import com.malaabeteam.malaabeapp.ui.login.signIn.SignInViewModel
 import com.malaabeteam.malaabeapp.ui.login.signUp.SignUpViewModel
 import com.malaabeteam.malaabeapp.ui.main.MainViewModel
+import com.malaabeteam.malaabeapp.ui.main.browse.BrowseViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -26,5 +27,10 @@ abstract class ViewModelsModule {
   @IntoMap
   @ViewModelKey(SignUpViewModel::class)
   abstract fun bindSignUpViewModel(viewModel: SignUpViewModel): ViewModel
+
+  @Binds
+  @IntoMap
+  @ViewModelKey(BrowseViewModel::class)
+  abstract fun bindBrowseViewModel(viewModel: BrowseViewModel): ViewModel
 
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainNavigationGraph"
+    app:startDestination="@id/browseFragment">
+
+    <fragment
+        android:id="@+id/browseFragment"
+        android:name="com.malaabeteam.malaabeapp.ui.main.browse.BrowseFragment"
+        android:label="BrowseFragment"
+        tools:layout="@layout/fragment_browse"/>
+
+    <action
+        android:id="@+id/actionNavigateBrowseFragment"
+        app:destination="@id/browseFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/mainNavigationGraph"
+        app:popUpToInclusive="true"
+        />
+</navigation>

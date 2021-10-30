@@ -29,6 +29,7 @@ class DocumentMapper @Inject constructor(
           it.isBlocked ?: false
         )
       } ?: emptyList(),
-      description = document.description
+      description = document.description,
+      state = document.state
     )
 }

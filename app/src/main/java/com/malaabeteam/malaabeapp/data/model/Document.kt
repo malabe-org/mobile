@@ -9,5 +9,8 @@ data class Document(
   val imageUrl: String,
   val created: LocalDateTime,
   val captures: List<Image>,
-  val description: String
-)
+  val description: String,
+  val state: Boolean
+){
+  fun getMainImageUrl() = captures.firstOrNull()?.imageUrl ?: ""
+}

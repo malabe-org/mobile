@@ -169,4 +169,9 @@
     <string name="authenticatedOnlyDialogMessage">This functionality is available only for logged in users</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menuBrowse">Home</string>
+    <string name="menuNotifications">Notifications</string>
+    <string name="menuProfile">Profile</string>
+    <string name="menuDocument">Request</string>
+    <string name="textEmptyProducts">No request found</string>
 </resources>

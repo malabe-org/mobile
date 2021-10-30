@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="AlwaysShowAction">
+    <item
+        android:id="@+id/menuBrowse"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/menuBrowse"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/menuMessage"
+        android:enabled="true"
+        android:icon="@drawable/ic_notification"
+        android:title="@string/menuNotifications"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/menuProfile"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/menuProfile"
+        app:showAsAction="always"
+        />
+
+</menu>

@@ -26,7 +26,7 @@ abstract class BaseFragment<T : BaseViewModel<out UiModel>>(@LayoutRes contentLa
   protected open val showMenu = true
   protected open val ignoreMenu = false
 
-  //private fun showNavigation() = (activity as? MainActivity)?.showNavigation()
+  private fun showNavigation() = (activity as? MainActivity)?.showNavigation()
 
   //private fun hideNavigation() = (activity as? MainActivity)?.hideNavigation()
 
