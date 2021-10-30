@@ -41,10 +41,13 @@ class SignInFragment : BaseFragment<SignInViewModel>(R.layout.fragment_sign_in) 
     signInPasswordInput.doOnTextChanged { _, _, _, _ -> viewModel.validatePassword(signInPasswordInput.text.toString()) }
 
     signInButton.onClick {
+      (activity as LoginActivity).openMainActivity()
+
       viewModel.signIn(signInEmailInput.text.toString(), signInPasswordInput.text.toString(), SignInType.EMAIL)
     }
 
     viewModel.run {
+
       uiLiveData.observe(viewLifecycleOwner, Observer { render(it) })
     }
   }
@@ -54,6 +57,7 @@ class SignInFragment : BaseFragment<SignInViewModel>(R.layout.fragment_sign_in) 
       signInButton.isEnabled = passwordValid ?: false && emailValid ?: false
 
       isLoggedIn?.let {
+        (activity as LoginActivity).openMainActivity()
         if (isResetPassword == true) {
           //
         } else if (it) {

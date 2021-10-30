@@ -27,7 +27,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    openLoginActivity()
+    //openLoginActivity()
   }
 
 
