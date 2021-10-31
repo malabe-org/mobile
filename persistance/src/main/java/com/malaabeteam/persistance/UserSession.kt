@@ -1,6 +1,7 @@
 package com.malaabeteam.persistance
 
 import android.content.Context
+import android.util.Log
 import com.malaabeteam.persistance.exception.NotAuthorizedException
 import javax.inject.Inject
 
@@ -22,11 +23,12 @@ class UserSession @Inject constructor(context: Context) : BaseStorage(context) {
 
   fun logIn(
     token: String,
-    userId: Long,
+    userId: String,
     isEmailLogin: Boolean
   ) {
+    Log.d("LogInUser","token: $token")
     putString(KEY_TOKEN, token)
-    putLong(KEY_USER_ID, userId)
+    putString(KEY_USER_ID, userId)
     putBoolean(KEY_EMAIL_LOGIN, isEmailLogin)
   }
 

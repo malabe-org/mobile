@@ -8,8 +8,8 @@ import com.malaabeteam.malaabeapp.utilities.ErrorParser
 import com.malaabeteam.malaabeapp.utilities.FormInputValidator
 import com.malaabeteam.network.model.LoginResponseDto
 import com.malaabeteam.persistance.UserSession
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import retrofit2.HttpException
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -20,35 +20,29 @@ class SignInViewModel @Inject constructor(
   private val errorParser: ErrorParser
 ): BaseViewModel<SignInUiModel>() {
   fun signIn(
-    userId: String,
-    password: String,
-    type: SignInType,
-    email: String?=null
+    email: String,
+    password: String
   ){
     viewModelScope.launch {
       try{
         uiState = SignInUiModel(isLoading = true)
 
-        val user: LoginResponseDto = loginRepository.signIn(userId, password)
 
-        if (user.userSession.userProfile.resetPassword == true) {
-          uiState = SignInUiModel(
-            isLoading = false,
-            isLoggedIn = true,
-            isResetPassword = true,
-            resetPasswordToken = user.userSession.sessionKey
-          )
-          return@launch
-        }
+        val user = loginRepository.signIn(email, password)
+
+
+
 
         session.logIn(
-          token = user.userSession.sessionKey,
-          userId = user.userSession.userProfile.userId,
-          isEmailLogin = user.userSession.userProfile.loggedInWithEmail()
+          token = user.token!!,
+          userId = user.userId!!,
+          isEmailLogin = true
         )
+        Timber.d("user: $user")
 
         uiState = SignInUiModel(isLoading = false, isLoggedIn = true)
       }catch(t: Throwable){
+
         onError(t)
       }
     }

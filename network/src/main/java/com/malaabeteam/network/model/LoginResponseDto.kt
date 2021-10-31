@@ -1,5 +1,11 @@
 package com.malaabeteam.network.model
 
-data class LoginResponseDto(val userSession: UserSessionDto)
+data class LoginResponseDto(
+  var userId: String? = null,
+  var firstname: String? = null,
+  var lastname: String? = null,
+  var role: String? = null,
+  var token: String? = null,
+  var isFirstConnection: Boolean = false
+)
 
-data class UserSessionDto(val sessionKey: String, val userProfile: UserDto)

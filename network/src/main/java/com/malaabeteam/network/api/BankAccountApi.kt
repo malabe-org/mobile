@@ -14,20 +14,20 @@ class BankAccountApi @Inject constructor(
 
     suspend fun getAccount(
         session: String
-    ): AccountDto = service.getAccount(session).paylod
+    ): AccountDto = service.getAccount(session).response
 
     suspend fun addAccount(
         session: String,
         accountNumber: String,
         routingNumber: String,
         bankName: String
-    ): AccountDto = service.addAccount(session, AddAccountBody(accountNumber, routingNumber, bankName)).paylod
+    ): AccountDto = service.addAccount(session, AddAccountBody(accountNumber, routingNumber, bankName)).response
 
     suspend fun transferBalance(
         session: String,
         amount: BigDecimal,
         bankId: Long
-    ) = service.transferBalance(session, amount.toDouble(), bankId).paylod
+    ) = service.transferBalance(session, amount.toDouble(), bankId).response
 
     suspend fun getBankAccounts(
         session: String

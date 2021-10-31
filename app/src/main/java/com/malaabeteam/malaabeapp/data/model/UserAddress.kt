@@ -10,13 +10,7 @@ enum class AddrType(val addrValue: String) {
 
 @Parcelize
 data class UserAddress(
-  val id: Long,
-  val addrType: String,
-  val address1: String,
-  val address2: String?,
-  val firstName: String,
-  val lastName: String,
-  val city: String?,
-  val state: String?,
-  val zipCode: String?
+  val region: String,
+  val department: String,
+  val city: String?
 ) : Parcelable

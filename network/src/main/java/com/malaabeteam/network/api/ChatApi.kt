@@ -45,5 +45,5 @@ class ChatApi @Inject constructor(
     message: String,
     userId: String,
     chatId: Int?
-  ) = service.postMessage(userId, session, ChatMessageBody(chatId, message)).paylod
+  ) = service.postMessage(userId, session, ChatMessageBody(chatId, message)).response
 }
