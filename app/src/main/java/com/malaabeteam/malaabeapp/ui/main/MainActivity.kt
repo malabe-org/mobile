@@ -38,7 +38,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     if(!presentationShownState.wasShown() && !session.isAuthorized()){
       presentationShownState.setShown(true)
-      //openLoginActivity()
+      openLoginActivity()
       return
     }
     setContentView(R.layout.activity_main)

@@ -11,10 +11,7 @@ import androidx.core.text.HtmlCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.malaabeteam.common_ui.extensions.onClick
-import com.malaabeteam.common_ui.extensions.setErrorMessage
-import com.malaabeteam.common_ui.extensions.showErrorSnackbar
-import com.malaabeteam.common_ui.extensions.visibleIf
+import com.malaabeteam.common_ui.extensions.*
 import com.malaabeteam.malaabeapp.R
 import com.malaabeteam.malaabeapp.loginFragmentComponent
 import com.malaabeteam.malaabeapp.ui.common.BaseFragment
@@ -41,9 +38,7 @@ class SignInFragment : BaseFragment<SignInViewModel>(R.layout.fragment_sign_in) 
     signInPasswordInput.doOnTextChanged { _, _, _, _ -> viewModel.validatePassword(signInPasswordInput.text.toString()) }
 
     signInButton.onClick {
-      (activity as LoginActivity).openMainActivity()
-
-      viewModel.signIn(signInEmailInput.text.toString(), signInPasswordInput.text.toString(), SignInType.EMAIL)
+      viewModel.signIn(signInEmailInput.text.toString(), signInPasswordInput.text.toString())
     }
 
     viewModel.run {
@@ -52,12 +47,17 @@ class SignInFragment : BaseFragment<SignInViewModel>(R.layout.fragment_sign_in) 
     }
   }
 
+  override fun onResume() {
+    super.onResume()
+    signInEmailLayout.clearErrorIfEmpty()
+    signInPasswordLayout.clearErrorIfEmpty()
+  }
+
   private fun render(uiModel: SignInUiModel) {
     uiModel.run {
       signInButton.isEnabled = passwordValid ?: false && emailValid ?: false
 
       isLoggedIn?.let {
-        (activity as LoginActivity).openMainActivity()
         if (isResetPassword == true) {
           //
         } else if (it) {

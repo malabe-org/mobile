@@ -13,6 +13,7 @@ import com.malaabeteam.malaabeapp.di.component.AppComponent
 import com.malaabeteam.malaabeapp.di.component.DaggerAppComponent
 import com.malaabeteam.malaabeapp.ui.login.LoginActivity
 import com.malaabeteam.malaabeapp.ui.main.MainActivity
+import com.malaabeteam.malaabeapp.utilities.PresentationShownState
 import com.stripe.android.PaymentConfiguration
 import timber.log.Timber
 import javax.inject.Inject
@@ -20,6 +21,9 @@ import javax.inject.Inject
 class App : Application() {
 
   lateinit var appComponent: AppComponent
+
+  @Inject
+  lateinit var presentationShownState: PresentationShownState
 
   override fun onCreate() {
     super.onCreate()
@@ -34,6 +38,7 @@ class App : Application() {
 
     setupComponents()
 
+    presentationShownState.setShown(false)
   }
 
   private fun setupComponents() {

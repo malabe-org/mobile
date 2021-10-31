@@ -22,6 +22,7 @@ class SignUpViewModel @Inject constructor(
       try {
         uiState = SignUpUiModel(isLoading = true)
 
+
         val user = loginRepository.signUp(
           email = email,
           userName = userName,
@@ -29,9 +30,9 @@ class SignUpViewModel @Inject constructor(
         )
 
         session.logIn(
-          token = user.userSession.sessionKey,
-          userId = user.userSession.userProfile.userId,
-          isEmailLogin = user.userSession.userProfile.loggedInWithEmail()
+          token = user.token?:"",
+          userId = user.userId?:"",
+          isEmailLogin = true
         )
 
         uiState = SignUpUiModel(isLoading = false, isLoggedIn = true)

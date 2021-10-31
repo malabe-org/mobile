@@ -5,41 +5,35 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class User(
-  val id: Long,
-  val firstName: String,
-  val lastName: String,
-  val imageUrl: String?,
+  val userId: String,
+  val firstname: String,
+  val lastname: String,
   val email: String,
-  val username: String,
-  val gender: Gender,
+  val phone: String,
+  val gender: String,
   val role: String,
-  val isActive: Boolean,
-  val mobile: String,
-  val alertsOn: Boolean,
+  val isDeleted: Boolean,
+  val cni: String,
   val address: UserAddress?,
-  val rating: Double,
-  val addresses: List<UserAddress>,
-  val resetPassword: Boolean,
+  val addresses: List<UserAddress>?,
+  val localisation: String,
   val password: String
 ) : Parcelable {
 
   companion object {
     val UNKNOWN = User(
-      -1,
       "",
       "",
-      null,
       "",
       "",
-      Gender.OTHER,
       "",
-      mobile = "",
-      isActive = false,
-      alertsOn = false,
+      "",
+      "",
+      isDeleted = false,
+      cni = "",
       address = null,
-      rating = 0.0,
       addresses = emptyList(),
-      resetPassword = false,
+      localisation = "",
       password = ""
     )
   }

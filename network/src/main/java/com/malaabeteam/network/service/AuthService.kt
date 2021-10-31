@@ -14,7 +14,7 @@ import retrofit2.http.Query
 
 interface AuthService {
 
-  @POST("auth")
+  @POST(" /api/users/login")
   suspend fun signIn(@Body body: SignInRequestBody): ItemResponse<LoginResponseDto>
 
   @POST("auth/google")
@@ -23,7 +23,7 @@ interface AuthService {
   @POST("auth/facebook")
   suspend fun signInWithFacebook(@Body body: SignInSocialRequestBody): ItemResponse<LoginResponseDto>
 
-  @POST("user")
+  @POST(" /api/users/signup")
   suspend fun signUp(@Body body: SignUpRequestBody): ItemResponse<LoginResponseDto>
 
   @POST("user")
