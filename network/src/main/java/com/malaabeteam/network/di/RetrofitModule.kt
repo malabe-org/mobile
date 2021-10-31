@@ -21,12 +21,12 @@ object RetrofitModule {
   fun providesRetrofit(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit =
     Retrofit.Builder()
       .client(okHttpClient)
-      .addConverterFactory(MoshiConverterFactory.create())
+      .addConverterFactory(MoshiConverterFactory.create(moshi))
       .baseUrl(MALAABE_API_BASE_URL)
       .build()
 
   @Provides
-  fun providesMoshi(): Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+  fun providesMoshi(): Moshi = Moshi.Builder().build()
 
   @Provides
   fun providesOkHttp(
