@@ -27,7 +27,6 @@ import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.fragment_document.*
 import kotlinx.android.synthetic.main.fragment_request_documents.*
-import timber.log.Timber
 
 class RequestDocumentsFragment : BaseFragment<RequestDocumentsViewModel>(R.layout.fragment_request_documents) {
   override val viewModel by viewModels<RequestDocumentsViewModel> { viewModelFactory }

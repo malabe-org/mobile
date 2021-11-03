@@ -13,7 +13,6 @@ import com.malaabeteam.malaabeapp.ui.main.request.helpers.DocumentFormData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import timber.log.Timber
 import java.io.ByteArrayOutputStream
 import javax.inject.Inject
 
@@ -83,7 +82,6 @@ class RequestDocumentsViewModel@Inject constructor(
   }
 
   fun validate(){
-    Timber.d("-------------SIZE: $docs")
     uiState = RequestDocumentsUiModel(docs = docs, isValid = (docs.isNotEmpty() && docs.size == 3))
   }
 }
