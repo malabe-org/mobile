@@ -73,12 +73,12 @@
                 app:labelVisibilityMode="labeled"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/navigationSell"
+                app:layout_constraintRight_toLeftOf="@+id/navigationDocument"
                 app:menu="@menu/bottom_navigation_menu"
                 />
 
             <com.malaabeteam.malaabeapp.ui.common.view.DocumentOptionView
-                android:id="@+id/navigationSell"
+                android:id="@+id/navigationDocument"
                 android:layout_width="@dimen/bottomNavigationSellOptionWidth"
                 android:layout_height="@dimen/bottomNavigationHeight"
                 android:elevation="8dp"

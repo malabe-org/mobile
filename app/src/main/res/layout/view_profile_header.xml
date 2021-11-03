@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/profileHorizontalMargin"
+    android:layout_marginEnd="@dimen/profileHorizontalMargin"
+    android:background="@android:color/transparent"
+    >
+
+    <ImageView
+        android:id="@+id/profileHeaderImage"
+        android:layout_width="@dimen/profileHeaderImageSize"
+        android:layout_height="@dimen/profileHeaderImageSize"
+        android:src="@drawable/user_placeholder"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/profileHeaderUserName"
+        style="@style/Profile.Header.UserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingSmall"
+        android:layout_marginEnd="@dimen/spacingSmall"
+        app:layout_constraintBottom_toBottomOf="@+id/profileHeaderImage"
+        app:layout_constraintLeft_toRightOf="@+id/profileHeaderImage"
+        app:layout_constraintTop_toTopOf="@+id/profileHeaderImage"
+        tools:text="User name"
+        />
+
+    <ImageView
+        android:id="@+id/profileGenderIcon"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="@dimen/spacingSmall"
+        app:layout_constraintBottom_toBottomOf="@+id/profileHeaderImage"
+        app:layout_constraintLeft_toRightOf="@+id/profileHeaderImage"
+        tools:src="@drawable/ic_gender_female"
+        />
+
+    <TextView
+        android:id="@+id/profileHeaderCity"
+        style="@style/Profile.Header.City"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingTiny"
+        android:layout_marginEnd="@dimen/spacingSmall"
+        app:layout_constraintBottom_toBottomOf="@+id/profileHeaderImage"
+        app:layout_constraintLeft_toRightOf="@+id/profileGenderIcon"
+        tools:text="City"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

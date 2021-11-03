@@ -7,8 +7,7 @@ data class SignUpUiModel(
   val isLoggedIn: Boolean? = null,
   val passwordValid: Boolean? = null,
   val emailValid: Boolean? = null,
-  val userNameValid: Boolean? = null,
-  val termsAccepted: Boolean? = null,
+  val firstname: Boolean? = null,
   val errorMessage: String? = null
 ): UiModel() {
   override fun update(newModel: UiModel) =
@@ -17,7 +16,6 @@ data class SignUpUiModel(
       isLoggedIn = newModel.isLoggedIn ?: isLoggedIn,
       passwordValid = newModel.passwordValid ?: passwordValid,
       emailValid = newModel.emailValid ?: emailValid,
-      userNameValid = newModel.userNameValid ?: userNameValid,
-      termsAccepted = newModel.termsAccepted ?: termsAccepted
+      firstname = newModel.firstname ?: firstname
     )
 }

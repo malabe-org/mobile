@@ -10,7 +10,19 @@
         android:id="@+id/browseFragment"
         android:name="com.malaabeteam.malaabeapp.ui.main.browse.BrowseFragment"
         android:label="BrowseFragment"
-        tools:layout="@layout/fragment_browse"/>
+        tools:layout="@layout/fragment_browse">
+        <action
+            android:id="@+id/action_browseFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.malaabeteam.malaabeapp.ui.main.notifications.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+
+    <include app:graph="@navigation/profile_navigation_graph" />
 
     <action
         android:id="@+id/actionNavigateBrowseFragment"
@@ -21,4 +33,23 @@
         app:popUpTo="@id/mainNavigationGraph"
         app:popUpToInclusive="true"
         />
+    <action
+        android:id="@+id/actionNavigateProfileFragment"
+        app:destination="@id/profileNavigationGraph"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/mainNavigationGraph"
+        app:popUpToInclusive="true"
+        />
+    <action
+        android:id="@+id/actionNavigateNotificationFragment"
+        app:destination="@id/notificationFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/mainNavigationGraph"
+        app:popUpToInclusive="true"
+        />
+
 </navigation>

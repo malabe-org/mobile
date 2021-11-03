@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class UserApi @Inject constructor(private val service: UserService) {
 
-    suspend fun fetchUser(token: String) = service.fetchUser(token).response
+    suspend fun fetchUser(token: String) = service.fetchUser("Bearer $token")
 
     suspend fun addAddress(token: String, address: AddressBody) = service.addAddress(token, address).response
 

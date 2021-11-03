@@ -18,8 +18,11 @@ class AuthApi  @Inject constructor(
     suspend fun signInWithFacebook(userId: String, email: String, tokenId: String) =
         service.signInWithFacebook(SignInSocialRequestBody(userId, email, tokenId))
 
-    suspend fun signUp(email: String, userName: String, password: String) =
-        service.signUp(SignUpRequestBody(email, userName, password))
+    suspend fun signUp(email: String, password: String,firstname: String, lastname: String, phone: String, gender: String) =
+        service.signUp(SignUpRequestBody(email, password, firstname, lastname, phone, gender))
+
+    suspend fun logout(token: String) =
+      service.logout("Bearer $token")
 
     suspend fun signUpSocial(
         email: String,

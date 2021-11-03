@@ -38,9 +38,9 @@ interface ChatService {
   /**
    * Returns a list of messages between the given user id and the logged user
    */
-  @GET("chat/user/{userId}")
+  @GET("chat/user/{_id}")
   suspend fun fetchUserChatMessages(
-    @Path("userId") userId: String,
+    @Path("_id") userId: String,
     @Query("session") token: String,
     @Query("pageSize") pageSize: Int,
     @Query("first") first: Int
@@ -69,9 +69,9 @@ interface ChatService {
   /**
    * Post message
    */
-  @POST("chat/{userId}")
+  @POST("chat/{_id}")
   suspend fun postMessage(
-    @Path("userId") userId: String,
+    @Path("_id") userId: String,
     @Query("session") token: String,
     @Body body: ChatMessageBody
   ): ItemResponse<ChatMsgDto>

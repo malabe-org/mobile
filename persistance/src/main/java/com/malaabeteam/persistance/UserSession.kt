@@ -34,7 +34,7 @@ class UserSession @Inject constructor(context: Context) : BaseStorage(context) {
 
   fun token() = getString(KEY_TOKEN)
 
-  fun id() = getLong(KEY_USER_ID)
+  fun id() = getString(KEY_USER_ID)
 
   fun logOut() = removeKeys(KEY_TOKEN, KEY_USER_ID, KEY_EMAIL_LOGIN)
 

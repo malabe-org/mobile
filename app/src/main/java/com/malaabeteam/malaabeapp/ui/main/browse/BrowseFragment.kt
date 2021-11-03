@@ -3,17 +3,23 @@ package com.malaabeteam.malaabeapp.ui.main.browse
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
 import com.malaabeteam.common_ui.extensions.onClick
 import com.malaabeteam.common_ui.extensions.showErrorSnackbar
 import com.malaabeteam.common_ui.extensions.visibleIf
+import com.malaabeteam.malaabeapp.Config.DEFAULT_BROWSE_GRID_SPAN
 import com.malaabeteam.malaabeapp.R
 import com.malaabeteam.malaabeapp.fragmentComponent
 import com.malaabeteam.malaabeapp.ui.common.BaseFragment
+import com.malaabeteam.malaabeapp.ui.common.OnTabRefreshListener
+import com.malaabeteam.malaabeapp.ui.common.OnTabReselectedListener
 import com.malaabeteam.malaabeapp.ui.main.MainActivity
 import com.malaabeteam.malaabeapp.ui.main.browse.recycler.DocumentAdapter
 import com.malaabeteam.malaabeapp.utilities.EndlessRecyclerViewScrollListener
@@ -23,14 +29,13 @@ import timber.log.Timber
 import kotlinx.android.synthetic.main.fragment_browse.*
 import javax.inject.Inject
 
-class BrowseFragment : BaseFragment<BrowseViewModel>(R.layout.fragment_browse) {
+class BrowseFragment : BaseFragment<BrowseViewModel>(R.layout.fragment_browse), OnTabReselectedListener, OnTabRefreshListener {
   override val viewModel by viewModels<BrowseViewModel> { viewModelFactory }
 
   private lateinit var adapter: DocumentAdapter
-  private lateinit var layoutManager: LinearLayoutManager
+  private lateinit var layoutManager: GridLayoutManager
   private lateinit var scrollListener: EndlessRecyclerViewScrollListener
 
-  private var topBarTranslation = 0F
 
   @Inject
   lateinit var session: UserSession
@@ -43,6 +48,7 @@ class BrowseFragment : BaseFragment<BrowseViewModel>(R.layout.fragment_browse) {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
+
     setupRecycler()
     setupSwipeRefresh()
     setupView()
@@ -51,14 +57,15 @@ class BrowseFragment : BaseFragment<BrowseViewModel>(R.layout.fragment_browse) {
       uiLiveData.observe(viewLifecycleOwner, Observer { render(it) })
       errorLiveData.observe(viewLifecycleOwner, Observer { renderError(it) })
     }
+
   }
 
-  override fun onDestroyView() {
-    super.onDestroyView()
-  }
+  override fun onTabReselected() = scrollToStart(true)
+
+  override fun onTabRefresh() = loadData()
 
   private fun setupRecycler(){
-    layoutManager = LinearLayoutManager(context)
+    layoutManager = GridLayoutManager(context, DEFAULT_BROWSE_GRID_SPAN)
     adapter = DocumentAdapter().apply {
       itemClickListener = { Timber.d("clicked")}
     }
@@ -76,11 +83,12 @@ class BrowseFragment : BaseFragment<BrowseViewModel>(R.layout.fragment_browse) {
   private fun setupScrollListener() {
     var scrollState = EndlessRecyclerViewScrollListener.State()
     if (this::scrollListener.isInitialized) {
+      titleCustomButton.visibility = View.GONE
       scrollState = scrollListener.getState()
     }
     scrollListener = object : EndlessRecyclerViewScrollListener(layoutManager, scrollState) {
       override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
-        loadData(resetScroll = false, page = page)
+        loadData(resetScroll = false)
       }
     }
   }
@@ -95,28 +103,37 @@ class BrowseFragment : BaseFragment<BrowseViewModel>(R.layout.fragment_browse) {
   }
 
   private fun setupView() {
-    fragmentBrowseLogout.visibleIf(!session.isAuthorized())
+    titleCustomButton.visibleIf(scrollListener.getState().loading)
+    fragmentBrowseLogout.visibleIf(session.isAuthorized())
     fragmentBrowseLogout.onClick { (activity as MainActivity).openLoginActivity() }
     loadData()
   }
 
   private fun loadData(
-    resetScroll: Boolean = true,
-    page: Int = 1
+    resetScroll: Boolean = true
   ) {
+
     if (resetScroll) {
+
       scrollToStart(false)
       scrollListener.reset()
+      titleCustomButton.visibility = VISIBLE
     }
     viewModel.run {
-      loadDocuments(page)
+      loadDocuments()
     }
   }
 
   private fun scrollToStart(smooth: Boolean) {
     when {
-      smooth -> fragmentBrowseRecycler.smoothScrollToPosition(0)
-      else -> fragmentBrowseRecycler.scrollToPosition(0)
+      smooth -> {
+        titleCustomButton.visibility = GONE
+        fragmentBrowseRecycler.smoothScrollToPosition(0)
+      }
+      else -> {
+        titleCustomButton.visibility = VISIBLE
+        fragmentBrowseRecycler.scrollToPosition(0)
+      }
     }
   }
 
@@ -128,7 +145,7 @@ class BrowseFragment : BaseFragment<BrowseViewModel>(R.layout.fragment_browse) {
       }
       isLoading?.let {
         fragmentBrowseSwipeRefresh.isRefreshing = it
-
+        //blockUi(it || documents?.any { i -> i.isLoading } == true)
       }
     }
   }

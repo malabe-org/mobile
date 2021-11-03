@@ -1,10 +1,14 @@
 package com.malaabeteam.malaabeapp.data.model
 
-import androidx.annotation.DrawableRes
+import android.content.Context
+import androidx.annotation.StringRes
 import com.malaabeteam.malaabeapp.R
 
-enum class Gender(val apiName: String, @DrawableRes val icon: Int) {
-  MALE("Male", R.drawable.ic_gender_male),
-  FEMALE("Female", R.drawable.ic_gender_female),
-  OTHER("Other", R.drawable.ic_gender_male)
+enum class Gender(
+  @StringRes val displayName: Int,
+  val apiName: String
+) {
+  MEN(R.string.textMen, "M"),
+  WOMEN(R.string.textWomen, "Mme");
 }
+

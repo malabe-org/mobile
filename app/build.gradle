@@ -114,6 +114,8 @@ dependencies {
     implementation "com.facebook.android:facebook-share:$versions.facebookSHare"
     implementation "com.facebook.android:facebook-android-sdk:$versions.facebookAuth"
 
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation 'com.droidninja:filepicker:2.2.5'
     implementation "com.github.dhaval2404:imagepicker:$versions.imagePicker"
     implementation "com.theartofdev.edmodo:android-image-cropper:$versions.imageCroper"
     implementation "com.stripe:stripe-android:$versions.stripe"

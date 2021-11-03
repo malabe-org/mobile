@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragmentRequestRoot"
+    android:layout_width="match_parent"
+    android:layout_height="800dp"
+    >
+
+    <ImageView
+        android:id="@+id/fragmentRequestCloseIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/spacingNormal"
+        android:layout_marginBottom="@dimen/spacingNormal"
+        android:padding="@dimen/spacingSmall"
+        app:srcCompat="@drawable/ic_close"
+        />
+
+    <TextView
+        android:id="@+id/fragmentRequestTitle"
+        style="@style/Document.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacingNormal"
+        android:layout_marginTop="@dimen/spacingMedium"
+        android:text="@string/requestTitle"
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/fragmentRequestScroll"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="64dp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/sellScrollPaddingBottom"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:orientation="vertical"
+            >
+
+            <com.malaabeteam.malaabeapp.ui.main.request.views.RequestPagesIndicator
+                android:id="@+id/fragmentRequestIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacingMedium"
+                android:layout_marginTop="@dimen/spacingSmall"
+                android:layout_marginEnd="@dimen/spacingMedium"
+                />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/fragmentRequestPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/fragmentRequestNextWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorWhite"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="8dp"
+        android:padding="@dimen/spacingMedium"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fragmentRequestNextButton"
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/stateful_gradient_button_signup"
+            android:enabled="false"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="@string/requestNextStep"
+            />
+
+    </FrameLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/fragmentRequestSnackbarHost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/sellScrollPaddingBottom"
+        />
+
+    <LinearLayout
+        android:id="@+id/fragmentRequestProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <ProgressBar
+            style="@style/ProgressBar.Accent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/fragmentRequestProgressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacingSmall"
+            android:textColor="@color/colorTextPrimary"
+            android:gravity="center"
+            android:text="@string/requestPublishProgressText"
+            />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

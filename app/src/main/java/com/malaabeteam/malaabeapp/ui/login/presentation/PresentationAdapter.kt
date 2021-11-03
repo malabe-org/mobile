@@ -20,9 +20,9 @@ class PresentationAdapter: RecyclerView.Adapter<PresentationAdapter.Presentation
 
   private val presentationElements = listOf(
     PresentationItem(R.string.presentationTextPage1Title, R.string.presentationTextPage1Description, R.drawable.bg_main_gradient),
-    PresentationItem(R.string.presentationTextPage2Title, R.string.presentationTextPage2Description, R.drawable.anti_corruption_bg1),
-    PresentationItem(R.string.presentationTextPage3Title, R.string.presentationTextPage3Description, R.drawable.anti_corruption_bg1),
-    PresentationItem(R.string.presentationTextPage4Title, R.string.presentationTextPage4Description, R.drawable.anti_corruption_bg1)
+    PresentationItem(R.string.presentationTextPage2Title, R.string.presentationTextPage2Description, R.drawable.bg_main_gradient),
+    PresentationItem(R.string.presentationTextPage3Title, R.string.presentationTextPage3Description, R.drawable.bg_main_gradient),
+    PresentationItem(R.string.presentationTextPage4Title, R.string.presentationTextPage4Description, R.drawable.bg_main_gradient)
   )
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = PresentationViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_presentation, parent, false))

@@ -7,5 +7,6 @@ class MalaabeApi(
     val bankAccount: BankAccountApi,
     val user: UserApi,
     val chat: ChatApi,
-    val document: DocumentApi
+    val document: DocumentApi,
+    val notification: UserNotificationApi
 )

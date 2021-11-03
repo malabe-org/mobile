@@ -17,21 +17,27 @@ class BrowseViewModel @Inject constructor(
     loadDocuments()
   }
 
-  fun loadDocuments(page: Int = 1) {
-    if (repository.allLoaded && page > 1) return listDocuments(page)
+  fun loadDocuments() {
+    return listDocuments()
 
   }
 
-  private fun listDocuments(page: Int = 1) {
+  private fun listDocuments() {
     viewModelScope.launch {
       try {
-        uiState = BrowseUiModel(isLoading = true, documents = if (page == 1) emptyList() else null, hasFilters = false)
+        uiState = BrowseUiModel(isLoading = true)
 
         val documents = repository
-          .loadDocuments(page)
-          .map { DocumentListItem(it) }
+          .loadRequest()
+          .let { it ->
+            it.requests.map{
+            DocumentListItem(it)
+          } }
+
+        Timber.d("/*****************/ DOCUMENTS: $documents")
 
         uiState = BrowseUiModel(isLoading = false, documents = documents)
+        Timber.d("/*****************/ DOCUMENTS: $uiState")
       } catch (t: Throwable) {
         onError(t)
       }

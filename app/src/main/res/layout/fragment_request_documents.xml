@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragmentRequestPhotosRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/fragmentRequestDescriptionTitle"
+        style="@style/Document.PageTitle"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/spacingMedium"
+        android:layout_marginBottom="@dimen/spacingMedium"
+        android:text="@string/requestAddPhotos"
+        />
+
+    <LinearLayout
+        android:id="@+id/fragmentRequestPhotosMainImageHolder"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sellScrollMainImageHeight"
+        android:layout_marginStart="@dimen/spacingMedium"
+        android:layout_marginEnd="@dimen/spacingMedium"
+        android:background="@drawable/bg_request_add_doc"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_add_doc"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacingNormal"
+            android:gravity="center"
+            android:text="@string/requestAddPhotosPlaceholder"
+            android:textColor="@color/colorTextSecondary"
+            />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragmentRequestPhotosMainImageWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sellScrollMainImageHeight"
+        android:layout_marginStart="@dimen/spacingMedium"
+        android:layout_marginEnd="@dimen/spacingMedium"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:id="@+id/fragmentRequestPhotosMainImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_request_add_doc"
+            android:scaleType="centerCrop"
+            />
+
+        <ImageView
+            android:id="@+id/fragmentRequestPhotosMainImageRemove"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/spacingMedium"
+            android:background="@drawable/bg_circle_white"
+            android:elevation="4dp"
+            android:padding="@dimen/spacingTiny"
+            android:src="@drawable/ic_close"
+            />
+
+    </FrameLayout>
+
+    <GridLayout
+        android:id="@+id/fragmentRequestPhotosGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacingSmall"
+        android:columnCount="2"
+        />
+
+</LinearLayout>

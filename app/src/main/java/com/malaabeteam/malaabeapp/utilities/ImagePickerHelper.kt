@@ -13,12 +13,18 @@ import com.malaabeteam.malaabeapp.utilities.extensions.onBitmapError
 import com.malaabeteam.malaabeapp.utilities.extensions.onBitmapSuccess
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
+import okhttp3.MultipartBody
+
+import okhttp3.RequestBody
+import timber.log.Timber
+
 
 object ImagePickerHelper {
 
+
   const val PICKER_CODE = 333
-  private const val maxSizeKb = 1024
-  private const val maxDimen = 1024
+  private const val maxSizeKb = 2048
+  private const val maxDimen = 2048
 
   fun openGalleryOrCamera(fragment: Fragment) {
     ImagePicker.with(fragment)

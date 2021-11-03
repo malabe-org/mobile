@@ -11,8 +11,10 @@ import com.malaabeteam.malaabeapp.R
 import com.malaabeteam.malaabeapp.appComponent
 import com.malaabeteam.malaabeapp.di.component.FragmentComponent
 import com.malaabeteam.malaabeapp.ui.common.BaseActivity
+import com.malaabeteam.malaabeapp.ui.common.OnTabRefreshListener
 import com.malaabeteam.malaabeapp.ui.common.OnTabReselectedListener
 import com.malaabeteam.malaabeapp.ui.login.LoginActivity
+import com.malaabeteam.malaabeapp.ui.main.request.DocumentFragmentSheet
 import com.malaabeteam.malaabeapp.utilities.PresentationShownState
 import com.malaabeteam.malaabeapp.utilities.extensions.dimenToPx
 import com.malaabeteam.persistance.UserSession
@@ -67,14 +69,23 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
       val target = when (item.itemId) {
         R.id.menuBrowse -> R.id.actionNavigateBrowseFragment
-        R.id.menuProfile ->  R.id.actionNavigateBrowseFragment
-        R.id.menuMessage ->  R.id.actionNavigateBrowseFragment
+        R.id.menuProfile ->   R.id.actionNavigateProfileFragment
+        R.id.menuMessage ->  R.id.actionNavigateNotificationFragment
         else -> throw IllegalStateException("Unsupported menu item.")
       }
 
       navigationHost.findNavController().navigate(target)
 
       true
+    }
+
+    navigationDocument.setState(isEnabled = session.isAuthorized())
+    navigationDocument.onSellClicked {
+      if (!session.isAuthorized()) {
+        showContentUnavailableDialog()
+      } else {
+        DocumentFragmentSheet.create().show(supportFragmentManager, DocumentFragmentSheet.TAG)
+      }
     }
   }
 
@@ -83,6 +94,10 @@ class MainActivity : BaseActivity<MainViewModel>() {
       title = getString(R.string.authenticatedOnlyDialogTitle),
       message = getString(R.string.authenticatedOnlyDialogMessage)
     )
+  }
+
+  fun refreshTabs() {
+    doForFragments { (it as? OnTabRefreshListener)?.onTabRefresh() }
   }
 
   private fun doForFragments(action: (Fragment) -> Unit) {

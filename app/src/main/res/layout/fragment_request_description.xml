@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentRequestDescriptionRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    tools:context=".ui.main.request.pages.pageDescription.RequestDescriptionFragment">
+
+    <TextView
+        android:id="@+id/fragmentRequestDescriptionTitle"
+        style="@style/Document.PageTitle"
+        android:text="@string/requestAddDescription"
+        app:layout_constraintBottom_toTopOf="@id/fragmentSellDescriptionName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragmentSellDescriptionName"
+        style="@style/Document.TextInputLayout"
+        android:layout_marginTop="@dimen/spacingMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentRequestDescriptionTitle"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/Document.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:maxLines="100"
+            android:scrollHorizontally="false"
+            android:hint="add Description"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

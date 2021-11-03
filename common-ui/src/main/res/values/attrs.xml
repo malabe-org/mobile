@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="XingToolbarLight">
+        <attr name="toolbarLightTitle" format="string" />
+        <attr name="toolbarLightBackEnabled" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="XingToolbar">
+        <attr name="toolbarTitle" format="string" />
+        <attr name="toolbarShowLogout" format="boolean" />
+        <attr name="toolbarType" format="enum">
+            <enum name="MAIN" value="0" />
+            <enum name="SUBCATEGORY" value="1" />
+        </attr>
+    </declare-styleable>
     <declare-styleable name="SwipeRevealLayout">
         <attr name="dragFromEdge">
             <flag name="left" value="1" />

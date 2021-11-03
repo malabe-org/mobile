@@ -1,7 +1,7 @@
 package com.malaabeteam.network.model.request
 
-class DocumentBody (
-  val title: String,
-  val typeDocument: String,
-  val description: String
+import android.graphics.Bitmap
+
+class DocumentBody(
+  val documents: List<Bitmap>
   )

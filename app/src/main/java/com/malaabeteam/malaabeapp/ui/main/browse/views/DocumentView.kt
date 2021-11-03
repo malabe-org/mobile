@@ -17,6 +17,8 @@ import com.malaabeteam.malaabeapp.R
 import com.malaabeteam.malaabeapp.ui.main.browse.recycler.DocumentListItem
 import com.malaabeteam.malaabeapp.utilities.DateUtilities
 import kotlinx.android.synthetic.main.view_document.view.*
+import org.threeten.bp.LocalDateTime
+import timber.log.Timber
 
 @SuppressLint("SetTextI18n")
 class DocumentView : FrameLayout {
@@ -30,32 +32,47 @@ class DocumentView : FrameLayout {
     viewDocumentImage.clipToOutline = true
   }
 
-  fun bind(item: DocumentListItem, itemClickListener: (DocumentListItem) -> Unit){
+  fun bind(item: DocumentListItem,
+           itemClickListener: (DocumentListItem) -> Unit
+  ){
+    Timber.d("-------------DOCUMENTVIEW -- $item")
     clear()
-    viewDocumentRoot.onClick { itemClickListener(item)}
-    viewDocumentTitle.text = item.document.title
-    viewDocumentDescription.text = item.document.description
-    viewDocumentDate.text = DateUtilities.getTimeAgoString(item.document.created, context)
-    viewDocumentListPrice.text = when(item.document.state) {
+    viewDocumentRoot.onClick { Timber.d("itemClickListener(item)")}
+    viewDocumentTitle.text = "Demande de passport"
+    viewDocumentDescription.text = "Je voudrais un passport pour moi-même"
+    viewDocumentDate.text = "21/11/2021"
+    viewDocumentListPrice.text = when(item.document.treatment.isOpen) {
       true -> "success"
       false -> "pending"
     }
-    viewDocumentListPrice.background = when(item.document.state) {
-      true -> resources?.getDrawable(R.drawable.bg_success_state)
-      false ->resources?.getDrawable(R.drawable.bg_pending_state)
-    }
+//    viewDocumentListPrice.background = when(item.document.treatment.isOpen) {
+//      true -> resources?.getDrawable(R.drawable.bg_success_state)
+//      false ->resources?.getDrawable(R.drawable.bg_pending_state)
+//    }
     viewDocumentProgress.run { if (item.isLoading) fadeIn() else gone() }
     bindImage(item)
   }
 
   private fun bindImage(item: DocumentListItem) {
+
     Glide.with(this)
-      .load(item.document.getMainImageUrl())
-      .placeholder(R.drawable.image_placeholder)
+      .load(R.drawable.ic_doc_iconv2)
+      .placeholder(R.drawable.com_facebook_auth_dialog_cancel_background)
       .transform(CenterCrop())
+      .error(R.drawable.ic_innovations)
       .apply(RequestOptions.errorOf(R.drawable.image_placeholder))
       .transition(withCrossFade(DEFAULT_IMAGE_FADE_DURATION))
       .into(viewDocumentImage)
+
+    Glide.with(this)
+      .load(when(item.document.treatment.isOpen){
+        false ->R.drawable.ic_v2_check_success
+        true -> R.drawable.ic_pending_state2
+      })
+      .transform(CenterCrop())
+      .apply(RequestOptions.errorOf(R.drawable.ic_innovations))
+      .transition(withCrossFade(DEFAULT_IMAGE_FADE_DURATION))
+      .into(viewDocumentTeamIcon)
   }
 
   private fun clear() {

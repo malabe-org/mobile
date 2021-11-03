@@ -13,7 +13,7 @@ class LoginRepository @Inject constructor(
 ) {
 
   suspend fun signIn(email: String, password: String) =
-    api.auth.signIn(email, password).response
+    api.auth.signIn(email, password)
 
   suspend fun signInWithGoogle(userId: String, email: String, tokenId: String) =
     api.auth.signInWithGoogle(userId, email, tokenId).response
@@ -21,8 +21,8 @@ class LoginRepository @Inject constructor(
   suspend fun signInWithFacebook(userId: String, email: String, tokenId: String) =
     api.auth.signInWithFacebook(userId, email, tokenId).response
 
-  suspend fun signUp(email: String, userName: String, password: String) =
-    api.auth.signUp(email, userName, password).response
+  suspend fun signUp(email: String, password: String,firstname: String, lastname: String, phone: String, gender: String) =
+    api.auth.signUp(email, password, firstname, lastname, phone, gender)
 
   suspend fun signUpSocial(
     email: String,
