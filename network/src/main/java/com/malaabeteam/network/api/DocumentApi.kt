@@ -2,12 +2,14 @@ package com.malaabeteam.network.api
 
 import com.malaabeteam.network.model.request.DocumentBody
 import com.malaabeteam.network.service.DocumentService
-import okhttp3.MultipartBody
 import javax.inject.Inject
 
 class DocumentApi @Inject constructor(
   private val service: DocumentService
 ) {
+
+  suspend fun fetchDhHub(token: String) =
+    service.fetchDhHub(token)
 
   suspend fun fetchDocument(documentId: String) =
     service.fetchDocumentDetails(documentId)

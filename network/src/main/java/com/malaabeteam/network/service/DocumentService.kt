@@ -1,6 +1,7 @@
 package com.malaabeteam.network.service
 
 
+import com.malaabeteam.network.model.DhubsDto
 import com.malaabeteam.network.model.DocResponseDto
 import com.malaabeteam.network.model.RequestUser
 import com.malaabeteam.network.model.request.DocumentBody
@@ -25,6 +26,11 @@ interface DocumentService {
   suspend fun fetchUserRequest(
     @Header("Authorization") token: String
   ): DocResponseDto
+
+  @GET("api/dh_hub")
+  suspend fun fetchDhHub(
+    @Header("Authorization") token: String
+  ): DhubsDto
 
   @POST("document/{_id}")
   suspend fun postDocument(

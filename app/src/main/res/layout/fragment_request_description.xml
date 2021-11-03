@@ -32,14 +32,58 @@
         <com.google.android.material.textfield.TextInputEditText
             style="@style/Document.TextInput"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:ellipsize="none"
             android:maxLines="100"
+            android:layout_height="150dp"
+            android:inputType="text|textMultiLine"
             android:scrollHorizontally="false"
             android:hint="add Description"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/fragmentSellDescriptionAttributesTitle"
+        style="@style/Document.PageTitle"
+        android:layout_marginTop="@dimen/spacingMedium"
+        android:text="@string/sellAddAttributes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentSellDescriptionName"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragmentSellDescriptionBrand"
+        style="@style/Document.TextInputLayout"
+        android:layout_marginTop="@dimen/spacingNormal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentSellDescriptionAttributesTitle"
+        >
 
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/Document.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/sellDescriptionDhub"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <ImageView
+        style="@style/Document.IconNext"
+        app:layout_constraintBottom_toBottomOf="@+id/fragmentSellDescriptionBrand"
+        app:layout_constraintEnd_toEndOf="@+id/fragmentSellDescriptionBrand"
+        app:layout_constraintTop_toTopOf="@+id/fragmentSellDescriptionBrand"
+        />
+    <ProgressBar
+        android:id="@+id/fragmentSellDescriptionCategoryLoading"
+        style="@style/ProgressBar.Accent"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="@dimen/spacingSmall"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/fragmentSellDescriptionBrand"
+        app:layout_constraintEnd_toEndOf="@+id/fragmentSellDescriptionBrand"
+        app:layout_constraintTop_toTopOf="@+id/fragmentSellDescriptionBrand"
+        tools:visibility="visible"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

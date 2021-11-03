@@ -444,7 +444,7 @@
         <item name="android:layout_marginTop">2dp</item>
         <item name="android:color">@color/colorButtonOrangeBg</item>
         <item name="android:layout_marginEnd">@dimen/spacingNormal</item>
-        <item name="android:src">@drawable/ic_personal_info_next</item>
+        <item name="android:src">@drawable/ic_personal_info_nextv2</item>
     </style>
 
     <style name="Document.AttributesLabel">

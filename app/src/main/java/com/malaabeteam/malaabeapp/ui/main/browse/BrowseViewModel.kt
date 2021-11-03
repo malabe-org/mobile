@@ -3,14 +3,17 @@ package com.malaabeteam.malaabeapp.ui.main.browse
 import androidx.lifecycle.viewModelScope
 import com.malaabeteam.malaabeapp.R
 import com.malaabeteam.malaabeapp.data.repository.DocumentRepository
+import com.malaabeteam.malaabeapp.data.repository.UserRepository
 import com.malaabeteam.malaabeapp.ui.common.BaseViewModel
 import com.malaabeteam.malaabeapp.ui.main.browse.recycler.DocumentListItem
+import com.malaabeteam.malaabeapp.ui.main.profile.ProfileUiModel
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
 class BrowseViewModel @Inject constructor(
-  private val repository: DocumentRepository
+  private val repository: DocumentRepository,
+  private val userRepository: UserRepository
 ) : BaseViewModel<BrowseUiModel>() {
 
   init {
@@ -42,6 +45,21 @@ class BrowseViewModel @Inject constructor(
         onError(t)
       }
     }
+  }
+  fun logout(): Boolean {
+    var b: Boolean = false
+    viewModelScope.launch{
+      try {
+        uiState = BrowseUiModel(isLoading = true)
+        userRepository.logout()
+        b = true
+        uiState = BrowseUiModel(isLoading = false)
+      } catch (t: Throwable) {
+        onError(t)
+        b = false
+      }
+    }
+    return b
   }
 
   private fun onError(error: Throwable) {

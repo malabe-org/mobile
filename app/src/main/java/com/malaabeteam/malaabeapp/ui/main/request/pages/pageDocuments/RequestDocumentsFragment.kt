@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
+import android.view.View.VISIBLE
 import android.widget.FrameLayout
 import androidx.core.view.setMargins
 import androidx.fragment.app.Fragment
@@ -125,6 +126,8 @@ class RequestDocumentsFragment : BaseFragment<RequestDocumentsViewModel>(R.layou
     fragmentRequestPhotosMainImageWrapper.visibleIf(photos.isNotEmpty())
     fragmentRequestPhotosMainImageHolder.visibleIf(photos.isEmpty())
     if (photos.isNotEmpty()) {
+      tvImage.visibility=VISIBLE
+      tvImage.text = "CNI fle:"
       Glide.with(this@RequestDocumentsFragment)
         .load(photos.first().image)
         .into(fragmentRequestPhotosMainImage)

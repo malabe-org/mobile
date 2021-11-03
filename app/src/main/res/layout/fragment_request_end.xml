@@ -24,15 +24,17 @@
     <LinearLayout
         android:id="@+id/fragmentEndDescriptionName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fragmentRequestEndTitle">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="@color/colorButtonOrangeBg"
+            android:textColor="#605B57"
             android:text="Please review the information before submitting the form. Once submitted you will not be able to modify it later. The documents are in order: \n-- a photocopy of the National Identity Card, \n-- a photocopy of the residence certificate \n-- and finally a profile photo."/>
     </LinearLayout>
 

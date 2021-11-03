@@ -105,7 +105,11 @@ class BrowseFragment : BaseFragment<BrowseViewModel>(R.layout.fragment_browse), 
   private fun setupView() {
     titleCustomButton.visibleIf(scrollListener.getState().loading)
     fragmentBrowseLogout.visibleIf(session.isAuthorized())
-    fragmentBrowseLogout.onClick { (activity as MainActivity).openLoginActivity() }
+    fragmentBrowseLogout.onClick {
+      viewModel.logout()
+      session.logOut()
+      (activity as MainActivity).openLoginActivity()
+    }
     loadData()
   }
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:parentTag="android.widget.FrameLayout"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+        <ImageView
+            android:id="@+id/viewBrandsCloseIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/spacingSmall"
+            android:padding="@dimen/spacingSmall"
+            app:layout_constraintBottom_toBottomOf="@id/viewBrandsTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/viewBrandsTitle"
+            app:srcCompat="@drawable/ic_close"
+            />
+
+        <TextView
+            android:id="@+id/viewBrandsTitle"
+            style="@style/Document.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingMedium"
+            android:layout_marginTop="@dimen/spacingMedium"
+            android:text="@string/sellBrands"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/viewBrandsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:minHeight="600dp"
+            android:overScrollMode="never"
+            android:layout_marginTop="18dp"
+            android:paddingStart="@dimen/spacingNormal"
+            android:paddingTop="@dimen/spacingSmall"
+            android:paddingEnd="@dimen/spacingNormal"
+            android:paddingBottom="@dimen/spacingMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewBrandsTitle"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</merge>

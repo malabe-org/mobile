@@ -8,7 +8,7 @@ enum class Gender(
   @StringRes val displayName: Int,
   val apiName: String
 ) {
-  MEN(R.string.textMen, "M"),
-  WOMEN(R.string.textWomen, "Mme");
+  MEN(R.string.textMen, "Male"),
+  WOMEN(R.string.textWomen, "Female");
 }
 

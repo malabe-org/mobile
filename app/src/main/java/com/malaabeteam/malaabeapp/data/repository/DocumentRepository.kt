@@ -21,11 +21,16 @@ import java.io.ByteArrayOutputStream
 import android.media.MediaScannerConnection
 
 import android.os.Environment
+import com.beust.klaxon.Klaxon
+import com.facebook.stetho.json.ObjectMapper
 import com.malaabeteam.malaabeapp.Config
+import com.malaabeteam.network.model.Dhub
+import com.malaabeteam.network.model.DhubReq
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.*
 import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
 import java.io.FileOutputStream
 import java.io.IOException
 import java.lang.Exception
@@ -46,12 +51,16 @@ class DocumentRepository @Inject constructor(
 
   var allLoaded = false
 
+  suspend fun LoadDhub() = api.document.fetchDhHub("Bearer ${session.checkAuthorization()}").let{
+      mappers.dHub.fromNetwork(it)
+    }
+
   suspend fun loadDocument(documentId: String) =
     mappers.document.fromNetwork(api.document.fetchDocument(documentId))
 
 
   suspend fun loadRequest(): Document{
-    Timber.d("orororororor-----------> Bearer ${session.checkAuthorization()}")
+
     val result = api.document.fetchUserRequest("Bearer ${session.checkAuthorization()}").let{
       mappers.document.fromNetwork(it)
     }
@@ -79,6 +88,7 @@ class DocumentRepository @Inject constructor(
   @Suppress("BlockingMethodInNonBlockingContext")
   suspend fun uploadDocumentDoc(
     context: Context,
+    dhub: DhubReq?,
     images: ArrayList<Bitmap>
   ) {
     val token = session.checkAuthorization()
@@ -100,8 +110,11 @@ class DocumentRepository @Inject constructor(
     Timber.d("-------------------FILES: $contst")
 
 
+    val json = Klaxon().toJsonString({ dhub })
+
     val multipartBody: MultipartBody = MultipartBody.Builder()
       .setType(MultipartBody.FORM) // Header to show we are sending a Multipart Form Data
+      .addPart(json.toRequestBody("application/json".toMediaType()))
       .addFormDataPart("cniFile", files[0].absolutePath, contst[0]!!) // file param
       .addFormDataPart("receiptFile", files[1].absolutePath, contst[1]!!) // file param
       .addFormDataPart("seekerPhoto", files[2].absolutePath, contst[2]!!) // file param

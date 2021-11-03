@@ -209,4 +209,7 @@
     <string name="signUpCniHint">NIN</string>
     <string name="logoutText">Logout</string>
     <string name="errorCouldNotPickImage">An error occured. Please try again!</string>
+    <string name="sellDescriptionDhub">Choose recuperation point</string>
+    <string name="sellAddAttributes">Choose your recuperation point</string>
+    <string name="sellBrands">Recuperation point list</string>
 </resources>

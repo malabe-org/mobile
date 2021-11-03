@@ -10,10 +10,13 @@ import androidx.lifecycle.viewModelScope
 import com.malaabeteam.malaabeapp.R
 import com.malaabeteam.malaabeapp.data.repository.DocumentRepository
 import com.malaabeteam.malaabeapp.ui.common.BaseViewModel
+import com.malaabeteam.malaabeapp.ui.main.request.helpers.DescriptionFormData
 import com.malaabeteam.malaabeapp.ui.main.request.helpers.DocumentFormData
 import com.malaabeteam.malaabeapp.ui.main.request.helpers.RequestDocumentData
 import com.malaabeteam.malaabeapp.ui.main.request.pages.RequestPage
 import com.malaabeteam.malaabeapp.utilities.ErrorParser
+import com.malaabeteam.network.model.Dhub
+import com.malaabeteam.network.model.DhubReq
 import com.malaabeteam.persistance.UserSession
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -86,6 +89,10 @@ class DocumentViewModel@Inject constructor(
     documentData = documentData.copy(documents = doc.toList())
   }
 
+  fun updateDescriptionData(desc: DescriptionFormData){
+    documentData = documentData.copy(description = desc)
+  }
+
   fun getData(context: Context): ArrayList<Uri> {
     val myList: ArrayList<Uri> = arrayListOf()
     documentData.documents
@@ -107,12 +114,22 @@ class DocumentViewModel@Inject constructor(
       try {
         uiState = DocumentUiModel(isLoading = true, isLoadingText = R.string.requestDocumentProgressText, nextStepEnabled = false)
         val myList: ArrayList<Bitmap> = arrayListOf()
+        var dh: Dhub?
+        documentData.description.let{
+          dh = it.dhHub
+        }
+        val dhreq = DhubReq(dhHub = dh!!)
         documentData.documents
           .forEach { photo ->
             myList.add(photo.image!!)
           }
         withContext(Dispatchers.IO) {
-          documentRepository.uploadDocumentDoc(context, myList)
+          try {
+            documentRepository.uploadDocumentDoc(context, dhreq, myList)
+          }catch (e: Throwable){
+            onError(e)
+          }
+
         }
 
 
@@ -139,5 +156,10 @@ class DocumentViewModel@Inject constructor(
         _errorLiveData.postValue(R.string.errorCreateDocumentError)
       }
     }
+  }
+  private fun onError(error: Throwable) {
+    uiState = DocumentUiModel(isLoading = false)
+    _errorLiveData.value = R.string.errorGeneral
+    Timber.w(error)
   }
 }

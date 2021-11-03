@@ -32,7 +32,7 @@ class AddAnotherDocumentView : FrameLayout {
 
   fun setPhoto(doc: DocumentFormData) {
     this.doc = doc
-    Timber.d("-----------------------YAYAYYAYAYAYAYAYAY--$doc")
+
     viewAddAnotherDocEmpty.gone()
     viewAddAnotherDocImageRemove.visible()
     viewAddAnotherDocImageRemove.onClick { onRemoveClickListener?.invoke(this.doc!!) }

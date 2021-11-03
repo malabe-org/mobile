@@ -6,6 +6,7 @@ import javax.inject.Inject
 @AppScope
 class Mappers @Inject constructor(
   val document: DocumentMapper,
+  val dHub: DhubMapper,
   val user: UserMapper,
   val chat: ChatMapper,
   val bankAccountMapper: BankAccountMapper,

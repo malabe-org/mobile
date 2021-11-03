@@ -2,32 +2,27 @@ package com.malaabeteam.malaabeapp.ui.main.request.helpers
 
 import com.malaabeteam.malaabeapp.data.model.DocUser
 import com.malaabeteam.malaabeapp.data.model.Document
+import com.malaabeteam.network.model.Dhub
 import org.threeten.bp.LocalDateTime
 
 data class DescriptionFormData(
-  val title: String = "",
-  val typeDocument: String = "",
-  val description: String = ""
+  val description: String = "",
+  val dhHub: Dhub? = null
 ){
   fun isValid() = when{
-    title.trim().isEmpty() -> false
-    typeDocument.trim().isEmpty() -> false
     description.trim().isEmpty() -> false
     else -> true
   }
 
   fun isEmpty() = when{
-    title.trim().isNotEmpty() -> false
-    typeDocument.trim().isNotEmpty() -> false
     description.trim().isNotEmpty() -> false
     else -> true
   }
 
   companion object {
-    fun fromRequest(document: Document) = DescriptionFormData(
-      title = "",
-      typeDocument = "",
-      description = ""
-    )
+//    fun fromRequest(document: Document) = DescriptionFormData(
+//      description = "",
+//      dhHub = null
+//    )
   }
 }

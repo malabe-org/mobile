@@ -9,6 +9,5 @@ internal object Config {
   const val ORDER_DISPLAY_FORMAT = "MMM dd, uuuu h:mm:s a"
   const val REQUIRED_ZIP_LENGTH = 5
 
-  const val MALAABE_BASE_URL = "http://192.168.204.96:3000/"
-  const val MALAABE_PAGE_LINK_BASE_URL = "https://malaabe.page.link"
+  const val MALAABE_BASE_URL = "https://malabe-backend.herokuapp.com/"
 }

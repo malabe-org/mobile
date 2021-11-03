@@ -53,6 +53,16 @@
         android:visibility="gone"
         >
 
+        <TextView
+            android:id="@+id/tvImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacingNormal"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/requestAddPhotosPlaceholder"
+            android:textColor="@color/colorTextSecondary"
+            />
         <ImageView
             android:id="@+id/fragmentRequestPhotosMainImage"
             android:layout_width="match_parent"

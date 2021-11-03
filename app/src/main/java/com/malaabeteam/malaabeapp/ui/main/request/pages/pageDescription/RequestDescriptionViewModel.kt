@@ -1,11 +1,19 @@
 package com.malaabeteam.malaabeapp.ui.main.request.pages.pageDescription
 
+import androidx.lifecycle.viewModelScope
 import com.malaabeteam.malaabeapp.R
+import com.malaabeteam.network.model.Dhub
+import com.malaabeteam.malaabeapp.data.repository.DocumentRepository
 import com.malaabeteam.malaabeapp.ui.common.BaseViewModel
+import com.malaabeteam.malaabeapp.ui.main.browse.BrowseUiModel
 import com.malaabeteam.malaabeapp.ui.main.request.helpers.DescriptionFormData
+import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
-class RequestDescriptionViewModel @Inject constructor(): BaseViewModel<RequestDescriptionUiModel>() {
+class RequestDescriptionViewModel @Inject constructor(
+  private val documentRepository: DocumentRepository
+): BaseViewModel<RequestDescriptionUiModel>() {
   private var requestDescription = DescriptionFormData()
 
   init {
@@ -29,18 +37,29 @@ class RequestDescriptionViewModel @Inject constructor(): BaseViewModel<RequestDe
     validate()
   }
 
-  fun setTitle(title: String) {
-    requestDescription = requestDescription.copy(title = title)
+  fun setDhub(dhub: Dhub){
+    requestDescription = requestDescription.copy(dhHub = dhub)
     validate()
   }
 
-  fun setTypeDocument(type: String) {
-    requestDescription = requestDescription.copy(typeDocument = type)
-    validate()
+  fun loadDhub(){
+
+  viewModelScope.launch {
+    try {
+        uiState = RequestDescriptionUiModel(isLoading = true, loadingDhHub = true)
+      val dhubs = documentRepository.LoadDhub()
+      uiState = RequestDescriptionUiModel(isLoading=false, loadingDhHub=false, dHubs=dhubs, loadedDhubs=dhubs.dhHubs)
+    }catch (e: Throwable){
+      onError(e)
+    }
+  }
   }
 
-  private fun onError() {
+
+  private fun onError(error: Throwable) {
+    uiState = RequestDescriptionUiModel(isLoading = false)
     _errorLiveData.value = R.string.errorGeneral
+    Timber.w(error)
   }
 
   override fun onCleared() {
