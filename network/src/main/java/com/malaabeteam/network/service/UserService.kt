@@ -7,20 +7,12 @@ import com.malaabeteam.network.model.request.ChangeEmailBody
 import com.malaabeteam.network.model.request.UpdateUserBody
 import com.malaabeteam.network.model.response.ItemResponse
 import okhttp3.MultipartBody
-import retrofit2.http.Body
-import retrofit2.http.DELETE
-import retrofit2.http.GET
-import retrofit2.http.Multipart
-import retrofit2.http.POST
-import retrofit2.http.PUT
-import retrofit2.http.Part
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface UserService {
 
-  @GET("user")
-  suspend fun fetchUser(@Query("session") sessionKey: String): ItemResponse<UserDto>
+  @GET("api/users/me")
+  suspend fun fetchUser(@Header("Authorization") sessionKey: String): UserDto
 
   @PUT("user/address")
   suspend fun addAddress(

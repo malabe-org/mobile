@@ -3,22 +3,44 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable-v24/bg_request_add_doc.xml" value="0.1" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/bg_bottom_sheet.xml" value="0.1" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/bg_document_button.xml" value="0.1" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/bg_document_list.xml" value="0.15677083333333333" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/bg_document_option_disabled.xml" value="0.1111111111111111" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/bg_document_option_enabled.xml" value="0.1111111111111111" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/custom_button_style.xml" value="0.16510416666666666" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/ic_baseline_mail.xml" value="0.22592592592592592" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/ic_choice_gender.xml" value="0.290625" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/ic_notification.xml" value="0.1" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/selector_bottom_navigation.xml" value="0.1" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/activity_main.xml" value="0.14375" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_browse.xml" value="0.14010416666666667" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_document.xml" value="0.2" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_notification.xml" value="0.1111111111111111" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_request_description.xml" value="0.264" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_request_documents.xml" value="0.1234375" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_request_end.xml" value="0.264" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_sign_in.xml" value="0.27447916666666666" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_sign_up.xml" value="0.264" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/notifs_item.xml" value="0.1" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/sample_document_view.xml" value="0.1" />
-        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/view_document.xml" value="0.40562248995983935" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/view_document.xml" value="0.28028503562945367" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/view_document_option.xml" value="0.264" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/view_profile_header.xml" value="0.4" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/view_request_add_another_doc.xml" value="0.27314814814814814" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/view_request_pages_indicator.xml" value="0.2" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1546875" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/common-ui/src/main/res/drawable/bg_pending_state.xml" value="0.15677083333333333" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/common-ui/src/main/res/drawable/bg_snackbar_error.xml" value="0.15677083333333333" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/common-ui/src/main/res/drawable/bg_success_state.xml" value="0.15677083333333333" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/common-ui/src/main/res/drawable/gradientbackground.xml" value="0.16510416666666666" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/common-ui/src/main/res/drawable/stateful_gradient_button.xml" value="0.290625" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/common-ui/src/main/res/drawable/stateful_gradient_button_login.xml" value="0.1375" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/common-ui/src/main/res/drawable/stateful_gradient_button_signup.xml" value="0.1375" />
       </map>
     </option>
   </component>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical"
+  tools:parentTag="android.widget.LinearLayout"
+  >
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <TextView
+      android:id="@+id/viewRequestIndicatorPage1"
+      style="@style/Document.IndicatorLabel"
+      android:gravity="start"
+      android:text="@string/requestDocumentsText"
+      />
+
+    <TextView
+      android:id="@+id/viewRequestIndicatorPage2"
+      style="@style/Document.IndicatorLabel"
+      android:gravity="center"
+      android:text="@string/requestDescriptionText"
+      />
+
+    <TextView
+      android:id="@+id/viewRequestIndicatorPage3"
+      style="@style/Document.IndicatorLabel"
+      android:gravity="end"
+      android:text="@string/requestEndText"
+      />
+
+  </LinearLayout>
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacingSmall"
+    >
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="4dp"
+      android:layout_gravity="center"
+      android:layout_marginStart="6dp"
+      android:layout_marginEnd="6dp"
+      android:background="@color/colorGray"
+      />
+
+    <View
+      android:id="@+id/viewRequestIndicatorProgress"
+      android:layout_width="match_parent"
+      android:layout_height="4dp"
+      android:layout_gravity="center"
+      android:layout_marginStart="6dp"
+      android:layout_marginEnd="6dp"
+      android:background="@color/colorAccent"
+      android:scaleX="0"
+      android:transformPivotX="0dp"
+      />
+
+    <View
+      android:id="@+id/viewRequestIndicatorCheck1"
+      style="@style/Document.IndicatorDot"
+      android:layout_gravity="start"
+      android:background="@drawable/bg_circle_accent"
+      />
+
+    <View
+      android:id="@+id/viewRequestIndicatorCheck2"
+      style="@style/Document.IndicatorDot"
+      android:layout_gravity="center"
+      />
+
+    <View
+      android:id="@+id/viewRequestIndicatorCheck3"
+      style="@style/Document.IndicatorDot"
+      android:layout_gravity="end"
+      />
+
+  </FrameLayout>
+
+</merge>

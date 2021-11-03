@@ -2,10 +2,7 @@ package com.malaabeteam.network.di
 
 import com.malaabeteam.network.MalaabeApi
 import com.malaabeteam.network.api.*
-import com.malaabeteam.network.service.AuthService
-import com.malaabeteam.network.service.ChatService
-import com.malaabeteam.network.service.DocumentService
-import com.malaabeteam.network.service.BankAccountService
+import com.malaabeteam.network.service.*
 import com.teamxing.network.service.UserService
 import dagger.Module
 import dagger.Provides
@@ -22,6 +19,7 @@ object ApiModule {
         user = UserApi(retrofit.create(UserService::class.java)),
         bankAccount = BankAccountApi(retrofit.create(BankAccountService::class.java)),
         chat = ChatApi(retrofit.create(ChatService::class.java)),
-        document = DocumentApi(retrofit.create(DocumentService::class.java))
+        document = DocumentApi(retrofit.create(DocumentService::class.java)),
+        notification = UserNotificationApi(retrofit.create(UserNotificationService::class.java))
     )
 }

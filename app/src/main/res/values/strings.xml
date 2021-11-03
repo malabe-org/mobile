@@ -48,13 +48,13 @@
 
     <!-- Tutorial -->
     <string name="presentationTextPage1Title">Fight Corruption</string>
-    <string name="presentationTextPage1Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt!</string>
+    <string name="presentationTextPage1Description">In practical terms, corruption weakens the ability of the state to do its job. </string>
     <string name="presentationTextPage2Title">Fight Corruption</string>
-    <string name="presentationTextPage2Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt!</string>
+    <string name="presentationTextPage2Description">More generally, endemic corruption can undermine the foundations of a healthy economy by lowering social norms and undermining civic virtues.</string>
     <string name="presentationTextPage3Title">Raise Hand</string>
-    <string name="presentationTextPage3Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt!</string>
+    <string name="presentationTextPage3Description">Less prosperity: Corruption hinders economic growth, undermines the rule of law and wastes valuable skills and resources.</string>
     <string name="presentationTextPage4Title">Sign up NOW</string>
-    <string name="presentationTextPage4Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt!</string>
+    <string name="presentationTextPage4Description">so you will not be subject to the temptation or obligation to bribe to get your administrative papers</string>
 
     <string name="tutorialFooterText">MALAABE</string>
     <string name="tutorialLogoText"><![CDATA[MALAABE<b>APP</b>]]></string>
@@ -77,7 +77,9 @@
     <string name="signUpButton">SIGN UP</string>
     <string name="signUpAgreeTerms">I agree with terms and uses</string>
     <string name="signUpFooterText"><![CDATA[Already using MALAABE APP? <b>Sign In instead!</b>]]></string>
-    <string name="signUpUserNameHint">Username</string>
+    <string name="signUpFirstNameHint">First Name</string>
+    <string name="signUpLastNameHint">Last Name</string>
+    <string name="signGenderHint">Gender</string>
 
     <string name="signUpErrorInvalidPassword">Password must contain at least 6 characters, at least 1 upper case and 1 digit.</string>
     <string name="signUpErrorInvalidEmail">Invalid email format.</string>
@@ -174,4 +176,37 @@
     <string name="menuProfile">Profile</string>
     <string name="menuDocument">Request</string>
     <string name="textEmptyProducts">No request found</string>
+    <string name="textMen">Male</string>
+    <string name="textWomen">Female</string>
+    <string name="signUpPhoneHint">Phone</string>
+    <string name="requestAddAnotherDoc">Add another</string>
+    <string name="requestDescriptionText">Request Description</string>
+    <string name="requestDocumentsText">Files</string>
+    <string name="requestEndText">Beware</string>
+    <string name="requestPublishProgressText">Wait request is being submitted</string>
+    <string name="requestNextStep">Next Step</string>
+    <string name="requestTitle">Create New Request</string>
+    <string name="requestEditRemoveDocText">Document has been removed</string>
+    <string name="requestEditLoadingText">Wait until processing finished</string>
+    <string name="requestDocumentProgressText">Wait until process finished</string>
+    <string name="errorCreateDocumentError">Sorry. We had a problem processing some of the documents</string>
+    <string name="requestAddPhotosPlaceholder">Tap to add required files</string>
+    <string name="requestAddPhotos">Add required files</string>
+    <string name="errorImagePermissions">You need to allow permissions</string>
+    <string name="errorCouldNotCropImage">Unable to crop the image</string>
+    <string name="requestAddEnd">Beware</string>
+    <string name="requestAddDescription">Quick description</string>
+    <string name="requestCloseConfirmationTitle">Confirm Close</string>
+    <string name="requestCloseConfirmationText">Are you sure you want to abort process?</string>
+    <string name="requestPublishConfirmationTitle">Confirm Submission</string>
+    <string name="requestPublishConfirmationText">Once you submit it is impossible to modify later. Are you ready?</string>
+    <string name="requestCompleteForm">Submit request</string>
+    <string name="infoRequestCreated">Request has been successfully created!</string>
+    <string name="tabRecent">RECENT</string>
+    <string name="tabLowestPrice">OLD</string>
+    <string name="tabHighestPrice">ACCEPTED</string>
+    <string name="requestBrowseTitle">My Requests</string>
+    <string name="signUpCniHint">NIN</string>
+    <string name="logoutText">Logout</string>
+    <string name="errorCouldNotPickImage">An error occured. Please try again!</string>
 </resources>

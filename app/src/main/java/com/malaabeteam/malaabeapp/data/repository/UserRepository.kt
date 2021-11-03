@@ -25,6 +25,11 @@ class UserRepository @Inject constructor(
     return mappers.user.fromNetwork(api.user.fetchUser(session.token()!!))
   }
 
+  suspend fun logout() {
+    session.checkAuthorization()
+    api.auth.logout(session.token()!!)
+  }
+
   suspend fun addUserAddress(address: AddressBody): UserAddress {
     session.checkAuthorization()
     return mappers.user.mapUserAddress(api.user.addAddress(session.token()!!, address))

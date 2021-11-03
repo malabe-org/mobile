@@ -82,7 +82,7 @@
   <dimen name="personalInfoImageSize">102dp</dimen>
   <dimen name="addressRecyclerMinHeight">60dp</dimen>
 
-  <!-- Sell -->
+  <!-- Document -->
   <dimen name="sellScrollPaddingBottom">80dp</dimen>
   <dimen name="sellScrollMainImageHeight">200dp</dimen>
 

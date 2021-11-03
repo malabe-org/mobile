@@ -1,5 +1,5 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-  <item android:drawable="@drawable/bg_button_gradient" android:state_enabled="true" />
+  <item android:drawable="@android:drawable/screen_background_light" android:state_enabled="true" />
     <item android:drawable="@drawable/bg_button_disabled" android:state_enabled="false" />
-  <item android:drawable="@drawable/bg_button_gradient" />
+  <item android:drawable="@android:drawable/screen_background_light" />
 </selector>

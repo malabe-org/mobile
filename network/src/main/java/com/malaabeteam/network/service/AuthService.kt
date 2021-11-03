@@ -7,15 +7,12 @@ import com.malaabeteam.network.model.request.SignInRequestBody
 import com.malaabeteam.network.model.request.SignInSocialRequestBody
 import com.malaabeteam.network.model.request.SignUpRequestBody
 import com.malaabeteam.network.model.request.SocialSignUpRequestBody
-import retrofit2.http.Body
-import retrofit2.http.POST
-import retrofit2.http.PUT
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface AuthService {
 
   @POST(" /api/users/login")
-  suspend fun signIn(@Body body: SignInRequestBody): ItemResponse<LoginResponseDto>
+  suspend fun signIn(@Body body: SignInRequestBody): LoginResponseDto
 
   @POST("auth/google")
   suspend fun signInWithGoogle(@Body body: SignInSocialRequestBody): ItemResponse<LoginResponseDto>
@@ -24,7 +21,7 @@ interface AuthService {
   suspend fun signInWithFacebook(@Body body: SignInSocialRequestBody): ItemResponse<LoginResponseDto>
 
   @POST(" /api/users/signup")
-  suspend fun signUp(@Body body: SignUpRequestBody): ItemResponse<LoginResponseDto>
+  suspend fun signUp(@Body body: SignUpRequestBody): LoginResponseDto
 
   @POST("user")
   suspend fun socialSignUp(@Body body: SocialSignUpRequestBody): ItemResponse<LoginResponseDto>
@@ -37,4 +34,7 @@ interface AuthService {
 
   @PUT("auth/reset")
   suspend fun resetPassword(@Query("email") email: String)
+
+  @POST("api/users/logout")
+  suspend fun logout(@Header("Authorization") token: String)
 }

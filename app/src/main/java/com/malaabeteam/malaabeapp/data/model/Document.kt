@@ -1,16 +1,9 @@
 package com.malaabeteam.malaabeapp.data.model
 
-import org.threeten.bp.LocalDateTime
+import com.malaabeteam.network.model.RequestUser
 
 data class Document(
-  val id: String,
-  val title: String,
-  val typeDocument: String,
-  val imageUrl: String,
-  val created: LocalDateTime,
-  val captures: List<Image>,
-  val description: String,
-  val state: Boolean
+  val requests: List<RequestUser>
 ){
-  fun getMainImageUrl() = captures.firstOrNull()?.imageUrl ?: ""
+  fun getMainDoc() = requests.firstOrNull()?.documents ?: ""
 }

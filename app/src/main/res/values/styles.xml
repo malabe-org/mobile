@@ -91,7 +91,7 @@
     </style>
 
     <style name="Button.SignIn" parent="Button">
-        <item name="android:background">@drawable/stateful_gradient_button</item>
+        <item name="android:background">@drawable/stateful_gradient_button_login</item>
     </style>
 
     <style name="Button.Red" parent="Button">
@@ -370,29 +370,29 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="Sell" />
+    <style name="Document" />
 
-    <style name="Sell.Title">
+    <style name="Document.Title">
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/colorTextPrimary</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <style name="Sell.IndicatorDot">
+    <style name="Document.IndicatorDot">
         <item name="android:layout_width">16dp</item>
         <item name="android:layout_height">16dp</item>
         <item name="android:background">@drawable/bg_circle_gray</item>
     </style>
 
-    <style name="Sell.IndicatorLabel">
+    <style name="Document.IndicatorLabel">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
         <item name="android:textColor">@color/colorTextPrimary</item>
     </style>
 
-    <style name="Sell.TextLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="Document.TextLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:colorBackground">@color/colorWhite</item>
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textColorHint">@color/colorTextHint</item>
@@ -404,21 +404,21 @@
         <item name="colorControlHighlight">@color/colorPrimary</item>
     </style>
 
-    <style name="Sell.TextInputLayout" parent="Sell.TextLayout">
+    <style name="Document.TextInputLayout" parent="Document.TextLayout">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/spacingMedium</item>
         <item name="android:layout_marginEnd">@dimen/spacingMedium</item>
     </style>
 
-    <style name="Sell.TextInput">
+    <style name="Document.TextInput">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/colorTextPrimary</item>
         <item name="android:imeOptions">actionDone</item>
         <item name="android:inputType">text</item>
     </style>
 
-    <style name="Sell.PageTitle">
+    <style name="Document.PageTitle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_horizontal</item>
@@ -429,7 +429,7 @@
     </style>
 
 
-    <style name="Sell.PageSubTitle">
+    <style name="Document.PageSubTitle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_horizontal</item>
@@ -438,15 +438,16 @@
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="Sell.IconNext" parent="Sell.TextLayout">
+    <style name="Document.IconNext" parent="Document.TextLayout">
         <item name="android:layout_width">12dp</item>
         <item name="android:layout_height">16dp</item>
         <item name="android:layout_marginTop">2dp</item>
+        <item name="android:color">@color/colorButtonOrangeBg</item>
         <item name="android:layout_marginEnd">@dimen/spacingNormal</item>
         <item name="android:src">@drawable/ic_personal_info_next</item>
     </style>
 
-    <style name="Sell.AttributesLabel">
+    <style name="Document.AttributesLabel">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">@dimen/spacingMicro</item>
@@ -455,7 +456,7 @@
         <item name="android:maxLines">1</item>
     </style>
 
-    <style name="Sell.AttributesValue">
+    <style name="Document.AttributesValue">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/colorTextPrimary</item>

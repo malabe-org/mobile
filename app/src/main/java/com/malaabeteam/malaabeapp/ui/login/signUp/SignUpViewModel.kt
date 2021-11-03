@@ -17,7 +17,7 @@ class SignUpViewModel @Inject constructor(
   private val formInputValidator: FormInputValidator,
   private val errorParser: ErrorParser
 ) : BaseViewModel<SignUpUiModel>() {
-  fun signUp(email: String, userName: String, password: String) {
+  fun signUp(email: String, password: String,firstname: String, lastname: String, phone: String, gender: String) {
     viewModelScope.launch {
       try {
         uiState = SignUpUiModel(isLoading = true)
@@ -25,8 +25,11 @@ class SignUpViewModel @Inject constructor(
 
         val user = loginRepository.signUp(
           email = email,
-          userName = userName,
-          password = password
+          password = password,
+          firstname=firstname,
+          lastname=lastname,
+          phone=phone,
+          gender=gender
         )
 
         session.logIn(
@@ -62,13 +65,7 @@ class SignUpViewModel @Inject constructor(
 
   fun validateUserName(userName: String) {
     uiState = SignUpUiModel(
-      userNameValid = formInputValidator.userNameValid(userName)
-    )
-  }
-
-  fun checkTerms(checked: Boolean) {
-    uiState = SignUpUiModel(
-      termsAccepted = checked
+      firstname = formInputValidator.userNameValid(userName)
     )
   }
 }

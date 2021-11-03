@@ -1,6 +1,5 @@
 package com.malaabeteam.malaabeapp.data.mappers
 
-import com.malaabeteam.malaabeapp.data.model.Gender
 import com.malaabeteam.malaabeapp.data.model.User
 import com.malaabeteam.malaabeapp.data.model.UserAddress
 import com.malaabeteam.network.model.AddressDto
@@ -9,21 +8,16 @@ import javax.inject.Inject
 
 class UserMapper @Inject constructor() {
 
-  fun fromNetwork(dto: UserDto) =
+  fun fromNetwork(dto: UserDto?) =
     User(
-        userId = dto.userId,
-        firstname = dto.firstname ?: "",
-        lastname = dto.lastname ?: "",
-        email = dto.email ?: "",
-        phone = dto.phone ?: "",
-        gender = dto.gender ?: "",
-        role = dto.userRole ?: "",
-        isDeleted = dto.isDeleted ?: false,
-        cni = dto.cni ?: "",
-        address = mapUserAddress(dto.address),
-        addresses = dto.addresses?.map { mapUserAddress(it) } ?: emptyList(),
-        password = dto.password ?: "",
-        localisation = dto.localisation ?: ""
+        _id = dto?._id ?: "",
+        firstname = dto?.firstname ?: "Mouhameth",
+        lastname = dto?.lastname ?: "Tall",
+        email = dto?.email ?: "motall@ept.sn",
+        phone = dto?.phone ?: "775621245",
+        gender = dto?.gender ?: "M",
+        role = dto?.role ?: "seeker",
+        cni = dto?.cni ?: "1392 2006 011 68"
     )
 
   fun mapUserAddress(dto: AddressDto?) = UserAddress(
@@ -32,9 +26,4 @@ class UserMapper @Inject constructor() {
     dto?.city ?: ""
   )
 
-  private fun genderFor(apiName: String?) = when (apiName) {
-    Gender.MALE.apiName -> Gender.MALE
-    Gender.FEMALE.apiName -> Gender.FEMALE
-    else -> Gender.OTHER
-  }
 }

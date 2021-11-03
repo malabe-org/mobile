@@ -8,5 +8,6 @@ class Mappers @Inject constructor(
   val document: DocumentMapper,
   val user: UserMapper,
   val chat: ChatMapper,
-  val bankAccountMapper: BankAccountMapper
+  val bankAccountMapper: BankAccountMapper,
+  val notification: NotificationMapper
 )

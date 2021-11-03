@@ -9,8 +9,9 @@ class FormInputValidator @Inject constructor() {
 
   // Min 1 char
   private val userNameRegexp = "^.+$".toRegex()
+  private val nameRegex = "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+\$".toRegex()
 
   fun passwordValid(password: String) = passwordRegexp.matches(password)
-  fun userNameValid(userName: String) = userNameRegexp.matches(userName)
+  fun userNameValid(userName: String) = nameRegex.matches(userName)
   fun emailValid(email: String) = android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
 }

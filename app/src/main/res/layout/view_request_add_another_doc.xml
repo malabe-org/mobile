@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/bg_request_add_doc"
+  android:gravity="center"
+  android:orientation="vertical"
+  tools:parentTag="android.widget.FrameLayout"
+  >
+
+  <LinearLayout
+    android:id="@+id/viewAddAnotherDocEmpty"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+      android:id="@+id/viewAddAnotherDocIcon"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_gravity="center"
+      android:src="@drawable/add_doc_icon"
+      />
+
+    <TextView
+      android:id="@+id/viewAddAnotherDocText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/spacingMedium"
+      android:gravity="center"
+      android:text="@string/requestAddAnotherDoc"
+      android:textColor="@color/colorAccent"
+      />
+
+  </LinearLayout>
+
+  <ImageView
+    android:id="@+id/viewAddAnotherDocImage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="centerCrop"
+    />
+
+  <ImageView
+    android:id="@+id/viewAddAnotherDocImageRemove"
+    android:layout_width="28dp"
+    android:layout_height="28dp"
+    android:layout_gravity="end"
+    android:layout_margin="@dimen/spacingMedium"
+    android:background="@drawable/bg_circle_white"
+    android:elevation="4dp"
+    android:padding="@dimen/spacingTiny"
+    android:src="@drawable/ic_close"
+    android:visibility="gone"
+    />
+
+</merge>

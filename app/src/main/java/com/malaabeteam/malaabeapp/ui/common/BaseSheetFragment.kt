@@ -27,7 +27,7 @@ abstract class BaseSheetFragment<T : BaseViewModel<out UiModel>> : BottomSheetDi
       val bottomSheet = dialog.findViewById<FrameLayout>(com.google.android.material.R.id.design_bottom_sheet)
       BottomSheetBehavior.from(bottomSheet).apply {
         state = BottomSheetBehavior.STATE_EXPANDED
-        skipCollapsed = true
+        skipCollapsed = false
       }
     }
     return dialog
