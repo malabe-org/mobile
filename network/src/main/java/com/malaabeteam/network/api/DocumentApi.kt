@@ -12,11 +12,11 @@ class DocumentApi @Inject constructor(
   suspend fun fetchDocument(documentId: String) =
     service.fetchDocumentDetails(documentId)
 
-  suspend fun fetchDocuments(
-    session: String,
-    pageSize: Int,
-    first: Int
-  ) = service.fetchDocuments(session, pageSize, first)
+//  suspend fun fetchDocuments(
+//    session: String,
+//    pageSize: Int,
+//    first: Int
+//  ) = service.fetchDocuments(session, pageSize, first)
 
   suspend fun fetchUserRequest(
     token: String
@@ -27,7 +27,7 @@ class DocumentApi @Inject constructor(
     userId: String
   ) = service.postDocument(userId, session, DocumentBody(emptyList()))
 
-  suspend fun uploadDocPhoto(
-    files: MultipartBody
-  ) = service.uploadProductImage(files)
+//  suspend fun uploadDocPhoto(
+//    files: MultipartBody
+//  ) = service.uploadProductImage(files)
 }

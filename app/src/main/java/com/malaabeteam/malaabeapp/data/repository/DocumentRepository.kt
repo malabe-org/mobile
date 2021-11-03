@@ -121,9 +121,6 @@ class DocumentRepository @Inject constructor(
       }
     }
 
-
-    //val res = api.document.uploadDocPhoto(requestBody)
-    //Timber.d("------------------$res")
   }
 
   fun saveImage(context: Context, bitmap: Bitmap): Uri? {

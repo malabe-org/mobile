@@ -15,10 +15,12 @@
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/ic_notification.xml" value="0.1" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/drawable/selector_bottom_navigation.xml" value="0.1" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/activity_login.xml" value="0.12135416666666667" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/activity_main.xml" value="0.14375" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_browse.xml" value="0.14010416666666667" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_document.xml" value="0.2" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_notification.xml" value="0.1111111111111111" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_presentation.xml" value="0.12135416666666667" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_request_description.xml" value="0.264" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/fragment_request_documents.xml" value="0.1234375" />
@@ -34,6 +36,7 @@
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/layout/view_request_pages_indicator.xml" value="0.2" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1546875" />
+        <entry key="..\:/HACKATON/mobile app/mobileApp/common-ui/src/main/res/drawable/bg_main_gradient.xml" value="0.1375" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/common-ui/src/main/res/drawable/bg_pending_state.xml" value="0.15677083333333333" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/common-ui/src/main/res/drawable/bg_snackbar_error.xml" value="0.15677083333333333" />
         <entry key="..\:/HACKATON/mobile app/mobileApp/common-ui/src/main/res/drawable/bg_success_state.xml" value="0.15677083333333333" />
